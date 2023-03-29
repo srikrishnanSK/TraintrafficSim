@@ -1,10 +1,7 @@
 #include "SignalSystem.h"
 
 
-tsSystem::tsSystem(connecTracks* connecTrain, trainSignalstate initState){
-    this->connecTrack = connecTrain;
-    this->currentTrainstate = initState;
-}
+tsSystem::tsSystem(connecTracks* connecTrack, trainSignalstate initState) : connecTrack(connecTrack),currentTrainstate(initState){}
 
 
 void tsSystem::setTrainstate(trainSignalstate state) {

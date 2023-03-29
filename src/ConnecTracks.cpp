@@ -1,12 +1,6 @@
 #include "ConnecTracks.h"
 
-connecTracks::connecTracks(Tracks* parentTrack) {
-
-   this->parentTrack = parentTrack;
-   this->nextLink = nullptr;
-   this->trainSignal = nullptr;
-   this->trainType = TERMINATOR;
-}
+connecTracks::connecTracks(Tracks* parentTrack): parentTrack(parentTrack), nextLink(nullptr), trainSignal(nullptr),trainType(TERMINATOR) {}
 
 void connecTracks::connectTrains(connecTracks* train, trainConnectionType type) {
     this->nextLink = train;

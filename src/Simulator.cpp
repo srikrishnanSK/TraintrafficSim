@@ -4,13 +4,7 @@
 #include <thread>
 #include <chrono>
 
-Simulator::Simulator() {
-
-}
-
-void Simulator::addTracks(Tracks* track) {
-    tracks.push_back(track);
-}
+Simulator::Simulator() {}
 
 void Simulator::addTrainconnection(connecTracks* from, connecTracks* to, connecTracks::trainConnectionType type) {
     from->connectTrains(to, type);
@@ -24,34 +18,9 @@ void Simulator::addTrain(Trains* train) {
     trains.push_back(train);
 }
 
-bool Simulator::stepThroughsimulation() {
-    bool allTrainsStopped = true;
-
-    updateTrainsignals();
-
-    for (Trains* train : trains) {
-        if (train->gettrainStatus() == Trains::STOPPED) {
-            continue;
-        }
-
-        allTrainsStopped = false;
-        Tracks* currentTrack = train->getCurrenttrack();
-        connecTracks* nextPoint = (train->gettrainDirection() == Trains::FORWARD) ? currentTrack->getTrackendConnection() : currentTrack->getTrackstartConnection();
-
-        if (nextPoint->trainhasSignal() and nextPoint->getTrainSignal()->getTrainstate() == tsSystem::RED) {
-            if (train->getCurrentRouteIndex() + 1 < train->gettrackRoute().size() && train->gettrackRoute()[train->getCurrentRouteIndex() + 1] != nextPoint->getParenttrack()) {
-                continue;
-            }
-        }
-
-        moveTrain(train, nextPoint);
-    }
-
-    printSimulationState();
-    return allTrainsStopped;
+void Simulator::addTracks(Tracks* track) {
+    tracks.push_back(track);
 }
-
-
 
 
 void Simulator::runMultithreadedsim() {
@@ -80,7 +49,32 @@ void Simulator::runMultithreadedsim() {
     }
 }
 
+bool Simulator::stepThroughsimulation() {
+    bool allTrainsStopped = true;
 
+    updateTrainsignals();
+
+    for (Trains* train : trains) {
+        if (train->gettrainStatus() == Trains::STOPPED) {
+            continue;
+        }
+
+        allTrainsStopped = false;
+        Tracks* currentTrack = train->getCurrenttrack();
+        connecTracks* nextPoint = (train->gettrainDirection() == Trains::FORWARD) ? currentTrack->getTrackendConnection() : currentTrack->getTrackstartConnection();
+
+        if (nextPoint->trainhasSignal() and nextPoint->getTrainSignal()->getTrainstate() == tsSystem::RED) {
+            if (train->getCurrentRouteIndex() + 1 < train->gettrackRoute().size() && train->gettrackRoute()[train->getCurrentRouteIndex() + 1] != nextPoint->getParenttrack()) {
+                continue;
+            }
+        }
+
+        moveTrain(train, nextPoint);
+    }
+
+    printSimulationState();
+    return allTrainsStopped;
+}
 
 
 

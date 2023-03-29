@@ -1,9 +1,6 @@
 #include "Junction.h"
 
-Junction::Junction(connecTracks* incoming, connecTracks* outgoingFirst, connecTracks* outgoingSecond) {
-    this->incoming = incoming;
-    this->outgoingFirst = outgoingFirst;
-    this->outgoingSecond = outgoingSecond;
+Junction::Junction(connecTracks* incoming, connecTracks* outgoingFirst, connecTracks* outgoingSecond) : incoming(incoming), outgoingFirst(outgoingFirst), outgoingSecond(outgoingSecond) {
     incoming->connectTrains(outgoingFirst, connecTracks::JUNCTION);
 }
 

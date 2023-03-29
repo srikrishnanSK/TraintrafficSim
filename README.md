@@ -10,5 +10,5 @@ How to build the project
 3. run make.
 4. ./traintrafficsimulation to view the actual simulation.
 
-The binary has been compiled with -g flag for it to be used with gdb debugger. This should help resolve debug critical issues such as nullptr expection.
+The binary has been compiled with -g flag for it to be used with gdb debugger. This should help debug critical issues such as nullptr expection.
 

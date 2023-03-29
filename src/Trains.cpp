@@ -5,11 +5,7 @@
  *        are initialized with inital state to start moving.
  * @param   Tracks* initTrack, Direction trainDirection
  */
-Trains::Trains(Tracks* initTrack, Direction trainDirection) {
-   this->currentTrack = initTrack;
-   this->trainDirection = trainDirection; 
-   this->trainStatus = MOVING;
-   }
+Trains::Trains(Tracks* initTrack, Direction trainDirection) : currentTrack(initTrack), trainDirection(trainDirection),trainStatus(MOVING) {}
 
 
 /**

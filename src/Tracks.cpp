@@ -1,9 +1,7 @@
 #include "Tracks.h"
 #include "ConnecTracks.h"
 
-Tracks::Tracks(double length, const std::string& name){
-    this->length = length;
-    this->name= name;
+Tracks::Tracks(double length, const std::string& name) : length(length),name(name) {
     trackStartconnection = new connecTracks(this);
     trackEndconnection = new connecTracks(this);
 }
