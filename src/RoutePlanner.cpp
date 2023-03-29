@@ -24,12 +24,12 @@ Tracks* RoutePlanner::getNexttrack(Tracks* currentTrack, Trains* train) {
             continue;
         }
 
-        connecTrains* trainStartpoint = currentTrack->getTrackendConnection();
-        connecTrains* trainEndpoint = track->getTrackstartConnection();
-        connecTrains* trainPrevendpoint = train->getCurrentRouteIndex() > 0 ? train->gettrackRoute()[train->getCurrentRouteIndex() - 1]->getTrackstartConnection() : nullptr;
+        connecTracks* trackStartpoint = currentTrack->getTrackendConnection();
+        connecTracks* trackEndpoint = track->getTrackstartConnection();
+        connecTracks* trackPrevendpoint = train->getCurrentRouteIndex() > 0 ? train->gettrackRoute()[train->getCurrentRouteIndex() - 1]->getTrackstartConnection() : nullptr;
 
-        if (trainStartpoint->getNextlink() == trainEndpoint && trainEndpoint != trainPrevendpoint) {
-            double distance = trainStartpoint->getTraindistanceTo(trainEndpoint);
+        if (trackStartpoint->getNextlink() == trackEndpoint && trackEndpoint != trackPrevendpoint) {
+            double distance = trackStartpoint->getTraindistanceTo(trackEndpoint);
             if (distance < minDistance) {
                 minDistance = distance;
                 nextTrack = track;

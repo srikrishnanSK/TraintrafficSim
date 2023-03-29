@@ -1,17 +1,17 @@
 #ifndef JUNCTION_H
 #define JUNCTION_H
 
-#include "ConnecTrains.h"
+#include "ConnecTracks.h"
 
-class Trackjunction {
+class Junction {
     private:
-    connecTrains* incoming;
-    connecTrains* outgoingFirst;
-    connecTrains* outgoingSecond;
+    connecTracks* incoming;
+    connecTracks* outgoingFirst;
+    connecTracks* outgoingSecond;
     
 public:
-    Trackjunction(connecTrains* incoming, connecTrains* outgoingirst, connecTrains* outgoingSecond);
-    void setTrainconnection(connecTrains* outgoing);
-    connecTrains* getselectedConoutput();
+    Junction(connecTracks* incoming, connecTracks* outgoingirst, connecTracks* outgoingSecond);
+    void setTrainconnection(connecTracks* outgoing);
+    connecTracks* getselectedConoutput();
 };
 #endif

@@ -1,6 +1,6 @@
-#include "ConnecTrains.h"
+#include "ConnecTracks.h"
 
-connecTrains::connecTrains(Tracks* parentTrack) {
+connecTracks::connecTracks(Tracks* parentTrack) {
 
    this->parentTrack = parentTrack;
    this->nextLink = nullptr;
@@ -8,42 +8,42 @@ connecTrains::connecTrains(Tracks* parentTrack) {
    this->trainType = TERMINATOR;
 }
 
-void connecTrains::connectTrains(connecTrains* train, trainConnectionType type) {
+void connecTracks::connectTrains(connecTracks* train, trainConnectionType type) {
     this->nextLink = train;
     this->trainType = type;
 }
 
-connecTrains* connecTrains::getNextlink() {
+connecTracks* connecTracks::getNextlink() {
     return nextLink;
 }
 
-Tracks* connecTrains::getParenttrack() {
+Tracks* connecTracks::getParenttrack() {
     return parentTrack;
 }
 
-connecTrains::trainConnectionType connecTrains::getTrainconType() {
+connecTracks::trainConnectionType connecTracks::getTrainconType() {
     return trainType;
 }
 
-void connecTrains::setTrainsignal(tsSystem* trainSignal) {
+void connecTracks::setTrainsignal(tsSystem* trainSignal) {
     this->trainSignal = trainSignal;
 }
 
-bool connecTrains::trainhasSignal() const {
+bool connecTracks::trainhasSignal() const {
     return trainSignal != nullptr;
 }
 
-tsSystem* connecTrains::getTrainSignal() const {
+tsSystem* connecTracks::getTrainSignal() const {
     return trainSignal;
 }
 
-double connecTrains::getTraindistanceTo(const connecTrains* train) const {
+double connecTracks::getTraindistanceTo(const connecTracks* train) const {
     if (train == nullptr) {
         return 0;
     }
 
     double distance = 0;
-    connecTrains* currentCon = const_cast<connecTrains*>(this);
+    connecTracks* currentCon = const_cast<connecTracks*>(this);
     while (currentCon != nullptr && currentCon != train) {
         Tracks* track = currentCon->getParenttrack();
         distance += track->getTracklength();

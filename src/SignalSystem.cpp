@@ -1,8 +1,8 @@
 #include "SignalSystem.h"
 
 
-tsSystem::tsSystem(connecTrains* connecTrain, trainSignalstate initState){
-    this->connecTrain = connecTrain;
+tsSystem::tsSystem(connecTracks* connecTrain, trainSignalstate initState){
+    this->connecTrack = connecTrain;
     this->currentTrainstate = initState;
 }
 
@@ -15,7 +15,7 @@ tsSystem::trainSignalstate tsSystem::getTrainstate() {
     return currentTrainstate;
 }
 
-connecTrains* tsSystem::getTrainconnectionpoint() const {
-    return connecTrain;
+connecTracks* tsSystem::getTrackconnectionpoint() const {
+    return connecTrack;
 }
 

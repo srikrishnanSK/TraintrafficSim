@@ -1,11 +1,11 @@
 #include "Tracks.h"
-#include "ConnecTrains.h"
+#include "ConnecTracks.h"
 
 Tracks::Tracks(double length, const std::string& name){
     this->length = length;
     this->name= name;
-    trackStartconnection = new connecTrains(this);
-    trackEndconnection = new connecTrains(this);
+    trackStartconnection = new connecTracks(this);
+    trackEndconnection = new connecTracks(this);
 }
 
 Tracks::~Tracks() {
@@ -17,11 +17,11 @@ double Tracks::getTracklength() const {
     return length;
 }
 
-connecTrains* Tracks::getTrackstartConnection() const {
+connecTracks* Tracks::getTrackstartConnection() const {
     return trackStartconnection;
 }
 
-connecTrains* Tracks::getTrackendConnection() const {
+connecTracks* Tracks::getTrackendConnection() const {
     return trackEndconnection;
 }
 

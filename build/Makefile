@@ -18,7 +18,7 @@ all: $(PROG)
 
 SRCS = \
 	$(ROOT_DIR)src/Tracks.cpp \
-	$(ROOT_DIR)src/ConnecTrains.cpp \
+	$(ROOT_DIR)src/ConnecTracks.cpp \
 	$(ROOT_DIR)src/Junction.cpp \
 	$(ROOT_DIR)src/SignalSystem.cpp \
 	$(ROOT_DIR)src/Trains.cpp \

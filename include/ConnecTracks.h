@@ -7,7 +7,7 @@
 class Tracks;
 class tsSystem;
 
-class connecTrains {
+class connecTracks {
 public:
     enum trainConnectionType {
         DIRECT = 0, 
@@ -15,19 +15,19 @@ public:
         TERMINATOR 
     };
     
-    connecTrains(Tracks* parentTrack);
-    void connectTrains(connecTrains* train, trainConnectionType type);
-    connecTrains* getNextlink();
+    connecTracks(Tracks* parentTrack);
+    void connectTrains(connecTracks* train, trainConnectionType type);
+    connecTracks* getNextlink();
     Tracks* getParenttrack();
     trainConnectionType getTrainconType();
     void setTrainsignal(tsSystem* trainSsignal);
     bool trainhasSignal() const;
     tsSystem* getTrainSignal() const;
-    double getTraindistanceTo(const connecTrains* train) const;
+    double getTraindistanceTo(const connecTracks* train) const;
 
 private:
     Tracks* parentTrack;
-    connecTrains* nextLink;
+    connecTracks* nextLink;
     trainConnectionType trainType;
     tsSystem* trainSignal;
 };

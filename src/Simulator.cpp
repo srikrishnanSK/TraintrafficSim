@@ -12,11 +12,11 @@ void Simulator::addTracks(Tracks* track) {
     tracks.push_back(track);
 }
 
-void Simulator::addTrainconnection(connecTrains* from, connecTrains* to, connecTrains::trainConnectionType type) {
+void Simulator::addTrainconnection(connecTracks* from, connecTracks* to, connecTracks::trainConnectionType type) {
     from->connectTrains(to, type);
 }
 
-void Simulator::addTrainsignal(tsSystem* trainSignal, connecTrains* location) {
+void Simulator::addTrainsignal(tsSystem* trainSignal, connecTracks* location) {
     location->setTrainsignal(trainSignal);
 }
 
@@ -36,7 +36,7 @@ bool Simulator::stepThroughsimulation() {
 
         allTrainsStopped = false;
         Tracks* currentTrack = train->getCurrenttrack();
-        connecTrains* nextPoint = (train->gettrainDirection() == Trains::FORWARD) ? currentTrack->getTrackendConnection() : currentTrack->getTrackstartConnection();
+        connecTracks* nextPoint = (train->gettrainDirection() == Trains::FORWARD) ? currentTrack->getTrackendConnection() : currentTrack->getTrackstartConnection();
 
         if (nextPoint->trainhasSignal() and nextPoint->getTrainSignal()->getTrainstate() == tsSystem::RED) {
             if (train->getCurrentRouteIndex() + 1 < train->gettrackRoute().size() && train->gettrackRoute()[train->getCurrentRouteIndex() + 1] != nextPoint->getParenttrack()) {
@@ -105,15 +105,15 @@ void Simulator::printSimulationState() {
 }
 
 
-void Simulator::moveTrain(Trains* train, connecTrains* nextPoint) {
-    connecTrains* nextConnection = nextPoint->getNextlink();
+void Simulator::moveTrain(Trains* train, connecTracks* nextPoint) {
+    connecTracks* nextConnection = nextPoint->getNextlink();
     if (nextConnection != nullptr) {
         Tracks* nextTrack = nextConnection->getParenttrack();
         train->updateCurrenttrack(nextTrack);
         train->advanceRouteIndex();
 
         // Update the train's direction if necessary
-        if (nextPoint->trainhasSignal() && nextPoint->getTrainconType() == connecTrains::JUNCTION) {
+        if (nextPoint->trainhasSignal() && nextPoint->getTrainconType() == connecTracks::JUNCTION) {
             if (train->gettrainDirection() == Trains::FORWARD) {
                 train->settrainDirection(Trains::REVERSE);
             } else {
@@ -135,10 +135,10 @@ void Simulator::moveTrain(Trains* train, connecTrains* nextPoint) {
 
 void Simulator::updateTrainsignals() {
     for (auto& track : tracks) {
-        connecTrains* endConnection = track->getTrackendConnection();
+        connecTracks* endConnection = track->getTrackendConnection();
         if (endConnection->trainhasSignal()) {
             tsSystem* currentTrainsignal = endConnection->getTrainSignal();
-            connecTrains* nextConnection = endConnection->getNextlink();
+            connecTracks* nextConnection = endConnection->getNextlink();
             if (nextConnection) {
                 Tracks* nextTrack = nextConnection->getParenttrack();
                 bool trainInNexttrack = false;

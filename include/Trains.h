@@ -19,27 +19,25 @@ public:
     };
 
     Trains(Tracks* initTrack, Direction trainDirection = FORWARD);
-
-    void addtrackRoute(Tracks* track);
-    void updateCurrenttrack(Tracks* track);
-    void advanceRouteIndex();
-    void stop();
-    void move();
-    void settrainDirection(Direction newDirection);
     Tracks* getCurrenttrack() const;
-    const std::vector<Tracks*>& gettrackRoute() const;
     size_t getCurrentRouteIndex() const;
     Direction gettrainDirection() const;
     Status gettrainStatus() const;
+    void stop();
+    void move();
+    void updateCurrenttrack(Tracks* track);
+    void advanceRouteIndex();
+    void settrainDirection(Direction newDirection);
     void settrackRoute(const std::vector<Tracks*>& route);
+    const std::vector<Tracks*>& gettrackRoute() const;
     bool hastrainreachedDestination() const;
 
 
 private:
     Tracks* currentTrack;
-    std::vector<Tracks*> trackRoute;
     size_t currentRouteIndex;
     Direction trainDirection;
     Status trainStatus;
+    std::vector<Tracks*> trackRoute;
 };
 #endif

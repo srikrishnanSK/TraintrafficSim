@@ -1,16 +1,16 @@
 #include "Junction.h"
 
-Trackjunction::Trackjunction(connecTrains* incoming, connecTrains* outgoingFirst, connecTrains* outgoingSecond) {
+Junction::Junction(connecTracks* incoming, connecTracks* outgoingFirst, connecTracks* outgoingSecond) {
     this->incoming = incoming;
     this->outgoingFirst = outgoingFirst;
     this->outgoingSecond = outgoingSecond;
-    incoming->connectTrains(outgoingFirst, connecTrains::JUNCTION);
+    incoming->connectTrains(outgoingFirst, connecTracks::JUNCTION);
 }
 
-void Trackjunction::setTrainconnection(connecTrains* outgoing) {
-    incoming->connectTrains(outgoing, connecTrains::JUNCTION);
+void Junction::setTrainconnection(connecTracks* outgoing) {
+    incoming->connectTrains(outgoing, connecTracks::JUNCTION);
 }
 
-connecTrains* Trackjunction::getselectedConoutput() {
+connecTracks* Junction::getselectedConoutput() {
     return incoming->getNextlink();
 }

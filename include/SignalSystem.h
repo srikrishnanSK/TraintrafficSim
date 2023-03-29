@@ -1,10 +1,10 @@
 #ifndef SIGNALSYSTEM_H
 #define SIGNALSYSTEM_H
 
-#include "ConnecTrains.h"
+#include "ConnecTracks.h"
 
 /** Forward declaration of classes ConnectTracks*/
-class connecTrains;
+class connecTracks;
 
 class tsSystem {
 public:
@@ -13,15 +13,15 @@ public:
         RED 
     };
 
-    tsSystem(connecTrains* connecTrain, trainSignalstate initState);
+    tsSystem(connecTracks* connecTrain, trainSignalstate initState);
     void setTrainstate(trainSignalstate state);
     trainSignalstate getTrainstate();
-    connecTrains* getTrainconnectionpoint() const;
+    connecTracks* getTrackconnectionpoint() const;
 
 
 private:
     trainSignalstate currentTrainstate;
-    connecTrains* connecTrain;
+    connecTracks* connecTrack;
 };
 
 #endif
