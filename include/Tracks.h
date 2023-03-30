@@ -5,19 +5,22 @@
 #include <string>
 #include "ConnecTracks.h"
 
-class connecTracks;
+class connecTracks;//Forward Decleration 
 
+/**This class is responsible for handling all operations related to tracks to set their lengths, names, and get their start and end points*/
 class Tracks {
 public:
-    Tracks(double length, const std::string& name);
+    //Constructor and Destructor
+    Tracks(int length, const std::string& name);
     ~Tracks();
-    double getTracklength() const;
+    //Operations for handling tracks
+    int getTracklength() const;
     connecTracks* getTrackstartConnection() const;
     connecTracks* getTrackendConnection() const;
     const std::string& getTrackname() const;
 
 private:
-    double length;
+    int length;
     std::string name;
     connecTracks* trackStartconnection;
     connecTracks* trackEndconnection;

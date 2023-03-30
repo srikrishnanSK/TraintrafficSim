@@ -4,7 +4,12 @@
 #include <vector>
 #include "Tracks.h"
 
-class Tracks;
+class Tracks;//Forward Decleration
+
+/** The Train class is responsible for updating index and tracksegments for the train to move approproately. Additionally,
+ *  it is also utilized for setting the trains direction, routes, and also obtain other related status information to update
+ *  movement accordingly in the Simulator class.
+*/
 
 class Trains {
 public:
@@ -17,25 +22,27 @@ public:
         MOVING,
         STOPPED
     };
-
+    
+    //Constructor and Destructor
     Trains(Tracks* initTrack, Direction trainDirection = FORWARD);
-    Tracks* getCurrenttrack() const;
-    size_t getCurrentRouteIndex() const;
-    Direction gettrainDirection() const;
-    Status gettrainStatus() const;
+    ~Trains();
+    //All essential operations related to the Trains
     void stop();
-    void move();
     void updateCurrenttrack(Tracks* track);
     void advanceRouteIndex();
     void settrainDirection(Direction newDirection);
     void settrackRoute(const std::vector<Tracks*>& route);
-    const std::vector<Tracks*>& gettrackRoute() const;
+    unsigned int getCurrentRouteIndex() const;
     bool hastrainreachedDestination() const;
+    Tracks* getCurrenttrack() const;
+    Direction gettrainDirection() const;
+    Status gettrainStatus() const;
+    const std::vector<Tracks*>& gettrackRoute() const;
 
 
 private:
     Tracks* currentTrack;
-    size_t currentRouteIndex;
+    unsigned int currentRouteIndex;
     Direction trainDirection;
     Status trainStatus;
     std::vector<Tracks*> trackRoute;

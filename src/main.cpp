@@ -8,16 +8,8 @@
 #include "SignalSystem.h"
 #include "Junction.h"
 
-/** Initial Layout
- * A->B->C->Junction->D
- *        |      |
- *        L      F->G->H->Junction->I
- *        |                 |
- *        J                 E 
-*/
-
 /** Map Initialization for Tracks comprising of Names of each track as key and their respective lengths as value*/
-static std::map<const std::string, double> trackInitializationInfo = {{"A",100},{"B",200},{"C",150},{"D",300},{"E",250},{"F",350},{"G",400},{"H",100},{"I",300},{"J",350},};
+static std::map<const std::string, int> trackInitializationInfo = {{"A",100},{"B",200},{"C",150},{"D",300},{"E",250},{"F",350},{"G",400},{"H",100},{"I",300},{"J",350},};
 /**Map Initialization for Type of Connection a track is going to have with Track index as key and Connection type as their values*/
 static std::map<int,connecTracks::trainConnectionType> connectionType = {{0,connecTracks::DIRECT},{1,connecTracks::DIRECT},{2,connecTracks::JUNCTION},{3,connecTracks::TERMINATOR},{4,connecTracks::JUNCTION},{5,connecTracks::DIRECT},{6,connecTracks::DIRECT},{7,connecTracks::JUNCTION},{8,connecTracks::TERMINATOR},{9,connecTracks::JUNCTION},};
 /** Map Initialization for Trains in which direction will they move. It has Train number as the Key and FORWARD or REVERSE as its respective value*/
@@ -62,10 +54,13 @@ int main() {
       tsSimulation.addTrain(train);
    }
 
-   /**Initate multithreaded Simulation*/
-   tsSimulation.runMultithreadedsim();
-   /** Let the Simulation stay on console until user ends it*/
+   /** Let the user start the simulation (Press any key to start the simulation)*/
+   std::cout<<"Press any key to start the simulation"<<std::endl;
    std::cin.get();
+   
+   /**Initate multithreaded Simulation*/
+   tsSimulation.runSimulation();
+   
    std::cout << "Simulation has Ended" << std::endl;
 
    /** Clean up all the created objects for Tracks, Trains and clear the vectors*/
@@ -123,6 +118,8 @@ static void initializeTrains(std::vector<Trains*>&trains,std::vector<Tracks*>&tr
       switch (trainIndex)
       {
       case 0:
+         train = new Trains(tracks[8],trainDirection.at(trainIndex));
+         break;
       case 2:
         train = new Trains(tracks[0],trainDirection.at(trainIndex));
         break;
@@ -133,8 +130,10 @@ static void initializeTrains(std::vector<Trains*>&trains,std::vector<Tracks*>&tr
         train = new Trains(tracks[1],trainDirection.at(trainIndex));
         break;
       case 4:
+         train = new Trains(tracks[7],trainDirection.at(trainIndex));
+         break;
       case 5:
-        train = new Trains(tracks[trainIndex],trainDirection.at(trainIndex));
+        train = new Trains(tracks[5],trainDirection.at(trainIndex));
         break;
       default:
         std::cout<<"Invalid index "<<trainIndex<<std::endl;

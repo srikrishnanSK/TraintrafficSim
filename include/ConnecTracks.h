@@ -1,12 +1,15 @@
-#ifndef CONNECTRAINS_H
-#define CONNECTRAINS_H
+#ifndef CONNECTRACKS_H
+#define CONNECTRACKS_H
 
 #include "Tracks.h"
 #include "SignalSystem.h"
 
-class Tracks;
-class tsSystem;
+class Tracks;// Forward declaration
+class tsSystem;//Forward Declerarion
 
+/** This class is responsible for connectin trains and tracks, holding their respective signals, providing all required track related
+ *  information and also help calculate distance between tracks to find the shortest path 
+*/
 class connecTracks {
 public:
     enum trainConnectionType {
@@ -15,15 +18,21 @@ public:
         TERMINATOR 
     };
     
+    //Constructor and Destructor
     connecTracks(Tracks* parentTrack);
+    ~connecTracks();
+    
+    //Connect Trains, set signal and compute distance
     void connectTrains(connecTracks* train, trainConnectionType type);
+    void setTrainsignal(tsSystem* trainSsignal);
+    bool trainhasSignal() const;
+    int getTraindistanceTo(const connecTracks* train) const;
+    
+    //Get track links and signal information
     connecTracks* getNextlink();
     Tracks* getParenttrack();
     trainConnectionType getTrainconType();
-    void setTrainsignal(tsSystem* trainSsignal);
-    bool trainhasSignal() const;
     tsSystem* getTrainSignal() const;
-    double getTraindistanceTo(const connecTracks* train) const;
 
 private:
     Tracks* parentTrack;
