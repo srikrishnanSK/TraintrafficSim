@@ -5,13 +5,13 @@ important that they arrive in timely manner, reach the assigned destination, and
 is a starting point which can evolve into a real time simulation system. For sanity purposes 10 tracks with static names, arbitary lengths and 6 trains have
 been considered for the project. Once the binary has been executed press any key on the screen to see the movements of various trains.
 
-/** Initial Layout
- * A->B->C->Junction->D
- *        |      |
- *        I      F->G->H->Junction->L
- *        |                 |
- *        J                 E 
-*/
+ Initial Layout
+ ==============
+A->B->C->Junction->D
+        |      |
+        I      F->G->H->Junction->L
+        |                 |
+        J                 E 
 
 How to build the project
 =========================
