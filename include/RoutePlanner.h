@@ -12,18 +12,18 @@
  * accordingly
 */
 class RoutePlanner {
-    private:
-    //Get the next track in connection based on computation
-    Tracks* getNexttrack(Tracks* currentTrack, Trains* train);
-    const std::vector<Trains*>& trains;
-    const std::vector<Tracks*>& tracks;
+   private:
+   //Get the next track in connection based on computation
+   Tracks* getNexttrack(Tracks* currentTrack, Trains* train);
+   const std::vector<Trains*>& trains;
+   const std::vector<Tracks*>& tracks;
 
 public:
-    RoutePlanner(const std::vector<Tracks*>& tracks, const std::vector<Trains*>& trains);
-    ~RoutePlanner();
-    //Plan the routes based on the provided layout
-    std::vector<Tracks*> planRoutesfortrains(Trains* train);
-    void printTrainroutes() const;
+   RoutePlanner(const std::vector<Tracks*>& tracks, const std::vector<Trains*>& trains);
+   ~RoutePlanner();
+   //Plan the routes based on the provided layout
+   std::vector<Tracks*> planRoutesfortrains(Trains* train);
+   void printTrainroutes() const;
 };
 
 #endif

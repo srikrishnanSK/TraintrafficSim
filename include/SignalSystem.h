@@ -10,22 +10,22 @@ class connecTracks;// Forward Decleration
 class tsSystem {
 
 public:
-    enum trainSignalstate { 
-        GREEN = 0, 
-        RED 
-    };
+   enum trainSignalstate { 
+      GREEN = 0, 
+      RED 
+   };
 
-    //Constrcutor and Destructor 
-    tsSystem(connecTracks* connecTrain, trainSignalstate initState);
-    ~tsSystem();
-    
-    //Setter and getter methods
-    void setTrainstate(trainSignalstate state);
-    trainSignalstate getTrainstate();
+   //Constrcutor and Destructor 
+   tsSystem(connecTracks* connecTrain, trainSignalstate initState);
+   ~tsSystem();
+
+   //Setter and getter methods
+   void setTrainstate(trainSignalstate state);
+   trainSignalstate getTrainstate();
 
 private:
-    trainSignalstate currentTrainstate;
-    connecTracks* connecTrack;
+   trainSignalstate currentTrainstate;
+   connecTracks* connecTrack;
 };
 
 #endif

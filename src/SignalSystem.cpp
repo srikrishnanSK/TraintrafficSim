@@ -12,7 +12,7 @@ tsSystem::~tsSystem(){}
  * @return Returns nothing. Reutrn type is void.
  */
 void tsSystem::setTrainstate(trainSignalstate state) {
-    currentTrainstate = state;
+   currentTrainstate = state;
 }
 
 /**
@@ -21,5 +21,5 @@ void tsSystem::setTrainstate(trainSignalstate state) {
  * @return Returns trainSignalstate.
  */
 tsSystem::trainSignalstate tsSystem::getTrainstate() {
-    return currentTrainstate;
+   return currentTrainstate;
 }

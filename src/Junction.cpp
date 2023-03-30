@@ -2,7 +2,7 @@
 
 //Class Constructor
 Junction::Junction(connecTracks* incoming, connecTracks* outgoingFirst, connecTracks* outgoingSecond) : incoming(incoming), outgoingFirst(outgoingFirst), outgoingSecond(outgoingSecond) {
-    incoming->connectTrains(outgoingFirst, connecTracks::JUNCTION);
+   incoming->connectTrains(outgoingFirst, connecTracks::JUNCTION);
 }
 
 //Class Destructor
@@ -16,9 +16,9 @@ Junction::~Junction() {}
  * @return Returns nothing. Reutrn type is void.
  */
 void Junction::setTrainconnection(connecTracks* outgoing) {
-    if(outgoing != nullptr) {
-       incoming->connectTrains(outgoing, connecTracks::JUNCTION);
-    }
+   if(outgoing != nullptr) {
+     incoming->connectTrains(outgoing, connecTracks::JUNCTION);
+   }
 }
 
 /**
@@ -27,5 +27,5 @@ void Junction::setTrainconnection(connecTracks* outgoing) {
  * @return Returns connecTracks object.
  */
 connecTracks* Junction::getselectedConoutput() {
-    return incoming->getNextlink();
+   return incoming->getNextlink();
 }

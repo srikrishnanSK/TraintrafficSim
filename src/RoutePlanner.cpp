@@ -15,23 +15,23 @@ RoutePlanner::~RoutePlanner(){}
  * @return Returns std::vector<Tracks*>.
  */
 std::vector<Tracks*> RoutePlanner::planRoutesfortrains(Trains* train) {
-    std::vector<Tracks*> trainRoute;
-    if(train != nullptr) {
-        //get Current track info
-        Tracks* currentTrack = train->getCurrenttrack();
-        while (currentTrack != nullptr) {
-            trainRoute.push_back(currentTrack);
-            //Get the next track
-            Tracks* nextTrack = getNexttrack(currentTrack, train);
-            //Check
-            if(nextTrack == nullptr) {
-                break;
-            }
-            currentTrack = nextTrack;
-        }
-    }
+   std::vector<Tracks*> trainRoute;
+   if(train != nullptr) {
+      //get Current track info
+      Tracks* currentTrack = train->getCurrenttrack();
+      while (currentTrack != nullptr) {
+         trainRoute.push_back(currentTrack);
+         //Get the next track
+         Tracks* nextTrack = getNexttrack(currentTrack, train);
+         //Check
+         if(nextTrack == nullptr) {
+             break;
+           }
+           currentTrack = nextTrack;
+      }
+   }
 
-    return trainRoute;
+   return trainRoute;
 }
 
 /**
@@ -47,32 +47,32 @@ std::vector<Tracks*> RoutePlanner::planRoutesfortrains(Trains* train) {
  * @return Returns Tracks* object.
  */
 Tracks* RoutePlanner::getNexttrack(Tracks* currentTrack, Trains* train) {
-    int minDistance = std::numeric_limits<int>::max();
-    Tracks* nextTrack = nullptr;
-    if(currentTrack != nullptr && train != nullptr) {
-        for (Tracks* track : tracks) {
-            //Checks
-            if (track == currentTrack) {
-                continue;
-            }
+   int minDistance = std::numeric_limits<int>::max();
+   Tracks* nextTrack = nullptr;
+   if(currentTrack != nullptr && train != nullptr) {
+      for (Tracks* track : tracks) {
+         //Checks
+         if (track == currentTrack) {
+             continue;
+         }
 
-            //Get required information for validation
-            connecTracks* trackStartpoint = currentTrack->getTrackendConnection();
-            connecTracks* trackEndpoint = track->getTrackstartConnection();
-            connecTracks* trackPrevendpoint = train->getCurrentRouteIndex() > 0 ? train->gettrackRoute()[train->getCurrentRouteIndex() - 1]->getTrackstartConnection() : nullptr;
+         //Get required information for validation
+         connecTracks* trackStartpoint = currentTrack->getTrackendConnection();
+         connecTracks* trackEndpoint = track->getTrackstartConnection();
+         connecTracks* trackPrevendpoint = train->getCurrentRouteIndex() > 0 ? train->gettrackRoute()[train->getCurrentRouteIndex() - 1]->getTrackstartConnection() : nullptr;
 
-            //Verify and update accordingly
-            if (trackStartpoint->getNextlink() == trackEndpoint && trackEndpoint != trackPrevendpoint) {
-                int distance = trackStartpoint->getTraindistanceTo(trackEndpoint);
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    nextTrack = track;
-                }
-            }
-        }
-    }
+         //Verify and update accordingly
+         if (trackStartpoint->getNextlink() == trackEndpoint && trackEndpoint != trackPrevendpoint) {
+             int distance = trackStartpoint->getTraindistanceTo(trackEndpoint);
+             if (distance < minDistance) {
+                 minDistance = distance;
+                 nextTrack = track;
+             }
+         }
+       }
+   }
 
-    return nextTrack;
+   return nextTrack;
 }
 
 /**
@@ -81,15 +81,15 @@ Tracks* RoutePlanner::getNexttrack(Tracks* currentTrack, Trains* train) {
  * @return Returns nothing. Reutrn type is void.
  */
 void RoutePlanner::printTrainroutes() const {
-    std::cout << "Routes are as follows:" << std::endl;
-    int trainId = 0;
-    for (const Trains* train : trains) {
-        std::cout << "Train  number" << trainId << " route:";
-        for (Tracks* track : train->gettrackRoute()) {
-            std::cout << " " << track->getTrackname();
-        }
-        std::cout << std::endl;
-        trainId++;
-    }
-    std::cout << "----------------------" << std::endl;
+   std::cout << "Routes are as follows:" << std::endl;
+   int trainId = 0;
+   for (const Trains* train : trains) {
+      std::cout << "Train  number" << trainId << " route:";
+      for (Tracks* track : train->gettrackRoute()) {
+          std::cout << " " << track->getTrackname();
+      }
+      std::cout << std::endl;
+      trainId++;
+   }
+   std::cout << "----------------------" << std::endl;
 }

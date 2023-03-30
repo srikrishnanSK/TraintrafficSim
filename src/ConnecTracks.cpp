@@ -13,10 +13,10 @@ connecTracks::~connecTracks() {}
  * @return Returns nothing. Reutrn type is void.
  */
 void connecTracks::connectTrains(connecTracks* track, trainConnectionType type) {
-    if(track != nullptr) {
-        this->nextLink = track;
-    }
-    this->trainType = type;
+   if(track != nullptr) {
+      this->nextLink = track;
+   }
+   this->trainType = type;
 }
 
 /**
@@ -25,7 +25,7 @@ void connecTracks::connectTrains(connecTracks* track, trainConnectionType type) 
  * @return Returns connecTracks object.
  */
 connecTracks* connecTracks::getNextlink() {
-    return nextLink;
+   return nextLink;
 }
 
 /**
@@ -35,7 +35,7 @@ connecTracks* connecTracks::getNextlink() {
  * @return Returns Tracks object.
  */
 Tracks* connecTracks::getParenttrack() {
-    return parentTrack;
+   return parentTrack;
 }
 
 /**
@@ -44,7 +44,7 @@ Tracks* connecTracks::getParenttrack() {
  * @return Returns connecTracks object.
  */
 connecTracks::trainConnectionType connecTracks::getTrainconType() {
-    return trainType;
+   return trainType;
 }
 
 /**
@@ -53,9 +53,9 @@ connecTracks::trainConnectionType connecTracks::getTrainconType() {
  * @return Returns nothing. Reutrn type is void.
  */
 void connecTracks::setTrainsignal(tsSystem* trainSignal) {
-    if(trainSignal != nullptr) {
-        this->trainSignal = trainSignal;
-    }
+   if(trainSignal != nullptr) {
+      this->trainSignal = trainSignal;
+   }
 }
 
 /**
@@ -65,7 +65,7 @@ void connecTracks::setTrainsignal(tsSystem* trainSignal) {
  * @return Returns boolean value.
  */
 bool connecTracks::trainhasSignal() const {
-    return trainSignal != nullptr;
+   return trainSignal != nullptr;
 }
 
 /**
@@ -74,7 +74,7 @@ bool connecTracks::trainhasSignal() const {
  * @return Returns tsSystem object.
  */
 tsSystem* connecTracks::getTrainSignal() const {
-    return trainSignal;
+   return trainSignal;
 }
 
 /**
@@ -85,17 +85,17 @@ tsSystem* connecTracks::getTrainSignal() const {
  * @return Returns interger value of calculated distance.
  */
 int connecTracks::getTraindistanceTo(const connecTracks* train) const {
-    if (train == nullptr) {
-        return 0;
-    }
+   if (train == nullptr) {
+      return 0;
+   }
 
-    int distance = 0;
-    connecTracks* currentCon = const_cast<connecTracks*>(this);
-    while (currentCon != nullptr && currentCon != train) {
-        Tracks* track = currentCon->getParenttrack();
-        distance += track->getTracklength();
-        currentCon = currentCon->getNextlink();
-    }
+   int distance = 0;
+   connecTracks* currentCon = const_cast<connecTracks*>(this);
+   while (currentCon != nullptr && currentCon != train) {
+      Tracks* track = currentCon->getParenttrack();
+      distance += track->getTracklength();
+      currentCon = currentCon->getNextlink();
+   }
 
-    return distance;
+   return distance;
 }
