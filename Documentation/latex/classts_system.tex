@@ -1,0 +1,106 @@
+\hypertarget{classts_system}{}\doxysection{ts\+System Class Reference}
+\label{classts_system}\index{tsSystem@{tsSystem}}
+
+
+{\ttfamily \#include $<$Signal\+System.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{train\+Signalstate}} \{ \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2a33903928d3101c29fda7509fa637e160}{GREEN}} = 0
+, \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2ae0525ff2b79967c5086b9de9af1ee640}{RED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classts_system_a1bc912c85916bafbbfd77449e614f463}{ts\+System}} (\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$connec\+Train, \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{train\+Signalstate}} init\+State)
+\item 
+\mbox{\hyperlink{classts_system_a076a0b749020479f0082eff458067d5e}{$\sim$ts\+System}} ()
+\item 
+void \mbox{\hyperlink{classts_system_a24faee0ae25d0222f5dd6234bc4c42d9}{set\+Trainstate}} (\mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{train\+Signalstate}} state)
+\begin{DoxyCompactList}\small\item\em The set\+Trainstate method is used to set the state of track associated accordingly. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{train\+Signalstate}} \mbox{\hyperlink{classts_system_aa5b4ac3359071a09911c15d05a96a472}{get\+Trainstate}} ()
+\begin{DoxyCompactList}\small\item\em The get\+Trainstate returns the appropriate enum associated with the object related to that track segment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is responsible for handling the signals of the respective tracks 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}\label{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}} 
+\index{tsSystem@{tsSystem}!trainSignalstate@{trainSignalstate}}
+\index{trainSignalstate@{trainSignalstate}!tsSystem@{tsSystem}}
+\doxysubsubsection{\texorpdfstring{trainSignalstate}{trainSignalstate}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{ts\+System\+::train\+Signalstate}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GREEN@{GREEN}!tsSystem@{tsSystem}}\index{tsSystem@{tsSystem}!GREEN@{GREEN}}}\mbox{\Hypertarget{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2a33903928d3101c29fda7509fa637e160}\label{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2a33903928d3101c29fda7509fa637e160}} 
+GREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RED@{RED}!tsSystem@{tsSystem}}\index{tsSystem@{tsSystem}!RED@{RED}}}\mbox{\Hypertarget{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2ae0525ff2b79967c5086b9de9af1ee640}\label{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2ae0525ff2b79967c5086b9de9af1ee640}} 
+RED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classts_system_a1bc912c85916bafbbfd77449e614f463}\label{classts_system_a1bc912c85916bafbbfd77449e614f463}} 
+\index{tsSystem@{tsSystem}!tsSystem@{tsSystem}}
+\index{tsSystem@{tsSystem}!tsSystem@{tsSystem}}
+\doxysubsubsection{\texorpdfstring{tsSystem()}{tsSystem()}}
+{\footnotesize\ttfamily ts\+System\+::ts\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$}]{connec\+Train,  }\item[{\mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{train\+Signalstate}}}]{init\+State }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classts_system_a076a0b749020479f0082eff458067d5e}\label{classts_system_a076a0b749020479f0082eff458067d5e}} 
+\index{tsSystem@{tsSystem}!````~tsSystem@{$\sim$tsSystem}}
+\index{````~tsSystem@{$\sim$tsSystem}!tsSystem@{tsSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$tsSystem()}{~tsSystem()}}
+{\footnotesize\ttfamily ts\+System\+::$\sim$ts\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classts_system_aa5b4ac3359071a09911c15d05a96a472}\label{classts_system_aa5b4ac3359071a09911c15d05a96a472}} 
+\index{tsSystem@{tsSystem}!getTrainstate@{getTrainstate}}
+\index{getTrainstate@{getTrainstate}!tsSystem@{tsSystem}}
+\doxysubsubsection{\texorpdfstring{getTrainstate()}{getTrainstate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{ts\+System\+::train\+Signalstate}} ts\+System\+::get\+Trainstate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The get\+Trainstate returns the appropriate enum associated with the object related to that track segment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns train\+Signalstate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classts_system_a24faee0ae25d0222f5dd6234bc4c42d9}\label{classts_system_a24faee0ae25d0222f5dd6234bc4c42d9}} 
+\index{tsSystem@{tsSystem}!setTrainstate@{setTrainstate}}
+\index{setTrainstate@{setTrainstate}!tsSystem@{tsSystem}}
+\doxysubsubsection{\texorpdfstring{setTrainstate()}{setTrainstate()}}
+{\footnotesize\ttfamily void ts\+System\+::set\+Trainstate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{train\+Signalstate}}}]{state }\end{DoxyParamCaption})}
+
+
+
+The set\+Trainstate method is used to set the state of track associated accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em train\+Signalstate} & state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Reutrn type is void. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/include/\mbox{\hyperlink{_signal_system_8h}{Signal\+System.\+h}}\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/src/\mbox{\hyperlink{_signal_system_8cpp}{Signal\+System.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,32 @@
+\hypertarget{_route_planner_8h_source}{}\doxysection{Route\+Planner.\+h}
+\label{_route_planner_8h_source}\index{Z:/ubuntu/TrainSignalsimulationSystem/include/RoutePlanner.h@{Z:/ubuntu/TrainSignalsimulationSystem/include/RoutePlanner.h}}
+\mbox{\hyperlink{_route_planner_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ROUTEPLANNER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ROUTEPLANNER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tracks_8h}{Tracks.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_trains_8h}{Trains.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_route_planner}{RoutePlanner}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \textcolor{comment}{//Get\ the\ next\ track\ in\ connection\ based\ on\ computation}}
+\DoxyCodeLine{00017\ \ \ \ \mbox{\hyperlink{class_tracks}{Tracks}}*\ getNexttrack(\mbox{\hyperlink{class_tracks}{Tracks}}*\ currentTrack,\ \mbox{\hyperlink{class_trains}{Trains}}*\ train);}
+\DoxyCodeLine{00018\ \ \ \ \textcolor{keyword}{const}\ std::vector<Trains*>\&\ trains;}
+\DoxyCodeLine{00019\ \ \ \ \textcolor{keyword}{const}\ std::vector<Tracks*>\&\ tracks;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \mbox{\hyperlink{class_route_planner}{RoutePlanner}}(\textcolor{keyword}{const}\ std::vector<Tracks*>\&\ tracks,\ \textcolor{keyword}{const}\ std::vector<Trains*>\&\ trains);}
+\DoxyCodeLine{00023\ \ \ \ \mbox{\hyperlink{class_route_planner_a8048fb1234c39eaaf0c1da34543c9f72}{\string~RoutePlanner}}();}
+\DoxyCodeLine{00024\ \ \ \ \textcolor{comment}{//Plan\ the\ routes\ based\ on\ the\ provided\ layout}}
+\DoxyCodeLine{00025\ \ \ \ std::vector<Tracks*>\ \mbox{\hyperlink{class_route_planner_ad9df637fd5b9ac6c7764a03d3a7e11ed}{planRoutesfortrains}}(\mbox{\hyperlink{class_trains}{Trains}}*\ train);}
+\DoxyCodeLine{00026\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_route_planner_ab70768479a3c4ecae6de242288c2a915}{printTrainroutes}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

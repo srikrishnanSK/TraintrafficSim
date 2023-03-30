@@ -1,0 +1,27 @@
+\hypertarget{_junction_8h_source}{}\doxysection{Junction.\+h}
+\label{_junction_8h_source}\index{Z:/ubuntu/TrainSignalsimulationSystem/include/Junction.h@{Z:/ubuntu/TrainSignalsimulationSystem/include/Junction.h}}
+\mbox{\hyperlink{_junction_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ JUNCTION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JUNCTION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connec_tracks_8h}{ConnecTracks.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_junction}{Junction}}\ \{}
+\DoxyCodeLine{00009\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ incoming;}
+\DoxyCodeLine{00011\ \ \ \ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ outgoingFirst;}
+\DoxyCodeLine{00012\ \ \ \ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ outgoingSecond;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \textcolor{comment}{//Constrcutor\ and\ Destructor}}
+\DoxyCodeLine{00016\ \ \ \ \mbox{\hyperlink{class_junction}{Junction}}(\mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ incoming,\ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ outgoingirst,\ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ outgoingSecond);}
+\DoxyCodeLine{00017\ \ \ \ \mbox{\hyperlink{class_junction_a0ff0872a2414a6002762704c24824ea0}{\string~Junction}}();}
+\DoxyCodeLine{00018\ \ \ \ \textcolor{comment}{//Set\ the\ required\ connection}}
+\DoxyCodeLine{00019\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_junction_a2104df96363a4a27d89fe7b04d81a5ea}{setTrainconnection}}(\mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ outgoing);}
+\DoxyCodeLine{00020\ \ \ \ \textcolor{comment}{//Get\ the\ provided\ connection\ output}}
+\DoxyCodeLine{00021\ \ \ \ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ \mbox{\hyperlink{class_junction_aa0839e74b5a1a9c1c5685f1324b0970a}{getselectedConoutput}}();}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

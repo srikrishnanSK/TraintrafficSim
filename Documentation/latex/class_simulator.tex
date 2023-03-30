@@ -1,0 +1,180 @@
+\hypertarget{class_simulator}{}\doxysection{Simulator Class Reference}
+\label{class_simulator}\index{Simulator@{Simulator}}
+
+
+{\ttfamily \#include $<$Simulator.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simulator_a031573bfcfe2e0f5c9539bcc1c7fc5d9}{Simulator}} ()
+\item 
+\mbox{\hyperlink{class_simulator_a0f49aa04f42060a785adf77346b9de9f}{$\sim$\+Simulator}} ()
+\item 
+void \mbox{\hyperlink{class_simulator_ae1eff95eb8ff4a7950e0bbdd7af90bdc}{add\+Tracks}} (\mbox{\hyperlink{class_tracks}{Tracks}} $\ast$track)
+\begin{DoxyCompactList}\small\item\em The add\+Tracks method adds track objects into a vector if the provided object is NULL. This method is called from \mbox{\hyperlink{main_8cpp}{main.\+cpp}} once all the tracks have been initialized and their respective connections have been made. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulator_aba9323fc29cb172fd7e3da64f17b31a6}{add\+Train}} (\mbox{\hyperlink{class_trains}{Trains}} $\ast$train)
+\begin{DoxyCompactList}\small\item\em The add\+Train method adds train objects into a vector if the provided object is NULL. This method is called from \mbox{\hyperlink{main_8cpp}{main.\+cpp}} once all the trains have been initialized . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulator_a1fe1b626eb3afe0b865508369f578d35}{add\+Trainconnection}} (\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$from, \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$to, \mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}{connec\+Tracks\+::train\+Connection\+Type}} type)
+\begin{DoxyCompactList}\small\item\em The add\+Trainconnection is used to make connections between the track segments. This method is called from \mbox{\hyperlink{main_8cpp}{main.\+cpp}} once the track objects have been initialized with their names and lengths. The endpoint connection of current track is passed as 1st argument, the startpoint connection of the pottential next track is added as the 2nd argument and types of track connection being DIRECT or TERMINATOR or JUNCTION is configured accordingly. This in turn if not NULL is used to make an actual link between the curren track object and the next link object from the Connec\+Tracks class. respective connections have been made. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulator_a378cc8044a41e423da0c4083bb65568c}{add\+Trainsignal}} (\mbox{\hyperlink{classts_system}{ts\+System}} $\ast$train\+Signal, \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$location)
+\begin{DoxyCompactList}\small\item\em The add\+Trainsignal method is used as a connection point to place signals at the end of each respective track. It takes signal object as first argument and the tracks end connections as a 2nd arument where the signal is to be placed. If the provided track connection is not null the tracks particular signal is linked to it with initial state as GREEN done from \mbox{\hyperlink{main_8cpp}{main.\+cpp}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulator_adfe488254b0356fa6e1bd3965519b73e}{run\+Simulation}} ()
+\begin{DoxyCompactList}\small\item\em This is the core function which is used to run the simulation. Once all the reauired initial configurations are complete this method is called form \mbox{\hyperlink{main_8cpp}{main.\+cpp}}. Initially passes the added Train and Track objects to Rout\+Planner class for creating routes for trains and setting the routes that have been configured for each trains respectively. These routes are then printed on the console using the method from Rout\+Planner Class print\+Trainroutes. After this stage we move onto the initialize the Simulation. For every Train objects present we create a thread using lambda function witth this pointer (current classes object) and train object as capture list. The logic ensures to verify if the train has reach the destination continously for each train. Until destination is reached we setthrough the simulation by updating required signals and moving the trains accordingly. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_simulator_a079d7d4f16b271de6b6ca1c8886552db}{step\+Throughsimulation}} ()
+\begin{DoxyCompactList}\small\item\em The step\+Throughsimulation method is another core functionality which is used to run the provided simulation. After the respective signals have been updated by the update\+Trainsignals() method the status for each trains from the provided vectors are obtained and verified to see it can move forward or not. The current tracks end point information is obtained based on the direction on whether it has to move forward or backward accordingly. The obtained connection is then verified to see if it can move further. After all the required verification is passed the respective arguments are passed to the movetrain method for it to do the necessary actions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulator_a1d28f6f7853a3cd0795dacbf3ea95147}{print\+Stateoftrains}} ()
+\begin{DoxyCompactList}\small\item\em The print\+Stateoftrains is a simple method utilized to view the simulation on console. This provides the Train information and its respective states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_simulator}{Simulator}} Class is the sole entity responsible for ensuring that all trains have routes laid out for them, update train signals based on track availability, signal state, connections and ensure that the simulation runs smoothly as expected with the provided Layout 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_simulator_a031573bfcfe2e0f5c9539bcc1c7fc5d9}\label{class_simulator_a031573bfcfe2e0f5c9539bcc1c7fc5d9}} 
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\index{Simulator@{Simulator}!Simulator@{Simulator}}
+\doxysubsubsection{\texorpdfstring{Simulator()}{Simulator()}}
+{\footnotesize\ttfamily Simulator\+::\+Simulator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_simulator_a0f49aa04f42060a785adf77346b9de9f}\label{class_simulator_a0f49aa04f42060a785adf77346b9de9f}} 
+\index{Simulator@{Simulator}!````~Simulator@{$\sim$Simulator}}
+\index{````~Simulator@{$\sim$Simulator}!Simulator@{Simulator}}
+\doxysubsubsection{\texorpdfstring{$\sim$Simulator()}{~Simulator()}}
+{\footnotesize\ttfamily Simulator\+::$\sim$\+Simulator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_simulator_ae1eff95eb8ff4a7950e0bbdd7af90bdc}\label{class_simulator_ae1eff95eb8ff4a7950e0bbdd7af90bdc}} 
+\index{Simulator@{Simulator}!addTracks@{addTracks}}
+\index{addTracks@{addTracks}!Simulator@{Simulator}}
+\doxysubsubsection{\texorpdfstring{addTracks()}{addTracks()}}
+{\footnotesize\ttfamily void Simulator\+::add\+Tracks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tracks}{Tracks}} $\ast$}]{track }\end{DoxyParamCaption})}
+
+
+
+The add\+Tracks method adds track objects into a vector if the provided object is NULL. This method is called from \mbox{\hyperlink{main_8cpp}{main.\+cpp}} once all the tracks have been initialized and their respective connections have been made. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Tracks$\ast$} & track \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Reutrn type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulator_aba9323fc29cb172fd7e3da64f17b31a6}\label{class_simulator_aba9323fc29cb172fd7e3da64f17b31a6}} 
+\index{Simulator@{Simulator}!addTrain@{addTrain}}
+\index{addTrain@{addTrain}!Simulator@{Simulator}}
+\doxysubsubsection{\texorpdfstring{addTrain()}{addTrain()}}
+{\footnotesize\ttfamily void Simulator\+::add\+Train (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_trains}{Trains}} $\ast$}]{train }\end{DoxyParamCaption})}
+
+
+
+The add\+Train method adds train objects into a vector if the provided object is NULL. This method is called from \mbox{\hyperlink{main_8cpp}{main.\+cpp}} once all the trains have been initialized . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Trains$\ast$} & train \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Reutrn type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulator_a1fe1b626eb3afe0b865508369f578d35}\label{class_simulator_a1fe1b626eb3afe0b865508369f578d35}} 
+\index{Simulator@{Simulator}!addTrainconnection@{addTrainconnection}}
+\index{addTrainconnection@{addTrainconnection}!Simulator@{Simulator}}
+\doxysubsubsection{\texorpdfstring{addTrainconnection()}{addTrainconnection()}}
+{\footnotesize\ttfamily void Simulator\+::add\+Trainconnection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$}]{from,  }\item[{\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$}]{to,  }\item[{\mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}{connec\+Tracks\+::train\+Connection\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+The add\+Trainconnection is used to make connections between the track segments. This method is called from \mbox{\hyperlink{main_8cpp}{main.\+cpp}} once the track objects have been initialized with their names and lengths. The endpoint connection of current track is passed as 1st argument, the startpoint connection of the pottential next track is added as the 2nd argument and types of track connection being DIRECT or TERMINATOR or JUNCTION is configured accordingly. This in turn if not NULL is used to make an actual link between the curren track object and the next link object from the Connec\+Tracks class. respective connections have been made. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Tracks$\ast$} & track \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+connec\+Tracks$\ast$ from, connec\+Tracks$\ast$ to, \mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}{connec\+Tracks\+::train\+Connection\+Type}} type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulator_a378cc8044a41e423da0c4083bb65568c}\label{class_simulator_a378cc8044a41e423da0c4083bb65568c}} 
+\index{Simulator@{Simulator}!addTrainsignal@{addTrainsignal}}
+\index{addTrainsignal@{addTrainsignal}!Simulator@{Simulator}}
+\doxysubsubsection{\texorpdfstring{addTrainsignal()}{addTrainsignal()}}
+{\footnotesize\ttfamily void Simulator\+::add\+Trainsignal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classts_system}{ts\+System}} $\ast$}]{train\+Signal,  }\item[{\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$}]{location }\end{DoxyParamCaption})}
+
+
+
+The add\+Trainsignal method is used as a connection point to place signals at the end of each respective track. It takes signal object as first argument and the tracks end connections as a 2nd arument where the signal is to be placed. If the provided track connection is not null the tracks particular signal is linked to it with initial state as GREEN done from \mbox{\hyperlink{main_8cpp}{main.\+cpp}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ts\+System$\ast$} & train\+Signal, connec\+Tracks$\ast$ location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Reutrn type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulator_a1d28f6f7853a3cd0795dacbf3ea95147}\label{class_simulator_a1d28f6f7853a3cd0795dacbf3ea95147}} 
+\index{Simulator@{Simulator}!printStateoftrains@{printStateoftrains}}
+\index{printStateoftrains@{printStateoftrains}!Simulator@{Simulator}}
+\doxysubsubsection{\texorpdfstring{printStateoftrains()}{printStateoftrains()}}
+{\footnotesize\ttfamily void Simulator\+::print\+Stateoftrains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The print\+Stateoftrains is a simple method utilized to view the simulation on console. This provides the Train information and its respective states. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Reutrn type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulator_adfe488254b0356fa6e1bd3965519b73e}\label{class_simulator_adfe488254b0356fa6e1bd3965519b73e}} 
+\index{Simulator@{Simulator}!runSimulation@{runSimulation}}
+\index{runSimulation@{runSimulation}!Simulator@{Simulator}}
+\doxysubsubsection{\texorpdfstring{runSimulation()}{runSimulation()}}
+{\footnotesize\ttfamily void Simulator\+::run\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is the core function which is used to run the simulation. Once all the reauired initial configurations are complete this method is called form \mbox{\hyperlink{main_8cpp}{main.\+cpp}}. Initially passes the added Train and Track objects to Rout\+Planner class for creating routes for trains and setting the routes that have been configured for each trains respectively. These routes are then printed on the console using the method from Rout\+Planner Class print\+Trainroutes. After this stage we move onto the initialize the Simulation. For every Train objects present we create a thread using lambda function witth this pointer (current classes object) and train object as capture list. The logic ensures to verify if the train has reach the destination continously for each train. Until destination is reached we setthrough the simulation by updating required signals and moving the trains accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Reutrn type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulator_a079d7d4f16b271de6b6ca1c8886552db}\label{class_simulator_a079d7d4f16b271de6b6ca1c8886552db}} 
+\index{Simulator@{Simulator}!stepThroughsimulation@{stepThroughsimulation}}
+\index{stepThroughsimulation@{stepThroughsimulation}!Simulator@{Simulator}}
+\doxysubsubsection{\texorpdfstring{stepThroughsimulation()}{stepThroughsimulation()}}
+{\footnotesize\ttfamily bool Simulator\+::step\+Throughsimulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The step\+Throughsimulation method is another core functionality which is used to run the provided simulation. After the respective signals have been updated by the update\+Trainsignals() method the status for each trains from the provided vectors are obtained and verified to see it can move forward or not. The current tracks end point information is obtained based on the direction on whether it has to move forward or backward accordingly. The obtained connection is then verified to see if it can move further. After all the required verification is passed the respective arguments are passed to the movetrain method for it to do the necessary actions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Reutrn type is void. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/include/\mbox{\hyperlink{_simulator_8h}{Simulator.\+h}}\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/src/\mbox{\hyperlink{_simulator_8cpp}{Simulator.\+cpp}}\end{DoxyCompactItemize}

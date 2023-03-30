@@ -1,0 +1,231 @@
+\hypertarget{classconnec_tracks}{}\doxysection{connec\+Tracks Class Reference}
+\label{classconnec_tracks}\index{connecTracks@{connecTracks}}
+
+
+{\ttfamily \#include $<$Connec\+Tracks.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}{train\+Connection\+Type}} \{ \mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624ca1966d182656def4e547015d134d0a01e}{DIRECT}} = 0
+, \mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624ca6d0481f87e9ad4792b628b81891445ba}{JUNCTION}}
+, \mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624caf17ff4ec8bae0f50ca0cac05f4734825}{TERMINATOR}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classconnec_tracks_ad0082050e4a825c85ec08d105fc10dba}{connec\+Tracks}} (\mbox{\hyperlink{class_tracks}{Tracks}} $\ast$parent\+Track)
+\item 
+\mbox{\hyperlink{classconnec_tracks_a60e22b9ac3c3e5772e8eb6d1ad86ffc0}{$\sim$connec\+Tracks}} ()
+\item 
+void \mbox{\hyperlink{classconnec_tracks_a6242fdea55333afe351a6312762c3180}{connect\+Trains}} (\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$train, \mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}{train\+Connection\+Type}} type)
+\begin{DoxyCompactList}\small\item\em The connect\+Trains method called from the \mbox{\hyperlink{class_simulator}{Simulator}} class is used to form links netween various track segment. The method checks if the provided track is not null and assigns it to class variables accordinly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classconnec_tracks_ac6824010515f750c49aec7318ac5fd48}{set\+Trainsignal}} (\mbox{\hyperlink{classts_system}{ts\+System}} $\ast$train\+Ssignal)
+\begin{DoxyCompactList}\small\item\em The set\+Trainsignal method is used to set the singal object to the current classes signal object if the provided argument is not NULL. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classconnec_tracks_a7ace6ad9b4b0704e7cad069155f82bec}{trainhas\+Signal}} () const
+\begin{DoxyCompactList}\small\item\em The trainhas\+Signal return boolean value if the associalted signal object of the class exists. Const added so nothing is changed making it only readable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classconnec_tracks_a36cdeaf04e3c8c0fd76e95db8907bc19}{get\+Traindistance\+To}} (const \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$train) const
+\begin{DoxyCompactList}\small\item\em The get\+Traindistance\+To is used to compute the distance of the whole track route which is then used to determine the shortest path between the source and destination from \mbox{\hyperlink{class_route_planner}{Route\+Planner}} class. The const\+\_\+cast$<$connec\+Tracks$\ast$$>$(this) is utilized to remove the const for the current class object thus allowing for any modification if required. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$ \mbox{\hyperlink{classconnec_tracks_a0926fe328690943fd93cddb75a132dd6}{get\+Nextlink}} ()
+\begin{DoxyCompactList}\small\item\em The get\+Nextlink method returns the next track (connec\+Track object) in the provided link. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ \mbox{\hyperlink{classconnec_tracks_a2adb47b9813db07ac2012d3b05a4832e}{get\+Parenttrack}} ()
+\begin{DoxyCompactList}\small\item\em The get\+Parenttrack method returns the parent track or previous (Track object and is also associalted with its respective \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}}) object in the provided link. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}{train\+Connection\+Type}} \mbox{\hyperlink{classconnec_tracks_a93198f3e9a8c88f984630df373fb0b13}{get\+Traincon\+Type}} ()
+\begin{DoxyCompactList}\small\item\em The get\+Traincon\+Type method is used to return a enum value indicatin which the track is DIRECT or JUNCTION or a TERMINATOR. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classts_system}{ts\+System}} $\ast$ \mbox{\hyperlink{classconnec_tracks_a2bd9703c9fabb6b772f162237ae06342}{get\+Train\+Signal}} () const
+\begin{DoxyCompactList}\small\item\em The get\+Train\+Signal method returns a signal object as is. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is responsible for connectin trains and tracks, holding their respective signals, providing all required track related information and also help calculate distance between tracks to find the shortest path 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}\label{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}} 
+\index{connecTracks@{connecTracks}!trainConnectionType@{trainConnectionType}}
+\index{trainConnectionType@{trainConnectionType}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{trainConnectionType}{trainConnectionType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}{connec\+Tracks\+::train\+Connection\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIRECT@{DIRECT}!connecTracks@{connecTracks}}\index{connecTracks@{connecTracks}!DIRECT@{DIRECT}}}\mbox{\Hypertarget{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624ca1966d182656def4e547015d134d0a01e}\label{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624ca1966d182656def4e547015d134d0a01e}} 
+DIRECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JUNCTION@{JUNCTION}!connecTracks@{connecTracks}}\index{connecTracks@{connecTracks}!JUNCTION@{JUNCTION}}}\mbox{\Hypertarget{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624ca6d0481f87e9ad4792b628b81891445ba}\label{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624ca6d0481f87e9ad4792b628b81891445ba}} 
+JUNCTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TERMINATOR@{TERMINATOR}!connecTracks@{connecTracks}}\index{connecTracks@{connecTracks}!TERMINATOR@{TERMINATOR}}}\mbox{\Hypertarget{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624caf17ff4ec8bae0f50ca0cac05f4734825}\label{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624caf17ff4ec8bae0f50ca0cac05f4734825}} 
+TERMINATOR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classconnec_tracks_ad0082050e4a825c85ec08d105fc10dba}\label{classconnec_tracks_ad0082050e4a825c85ec08d105fc10dba}} 
+\index{connecTracks@{connecTracks}!connecTracks@{connecTracks}}
+\index{connecTracks@{connecTracks}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{connecTracks()}{connecTracks()}}
+{\footnotesize\ttfamily connec\+Tracks\+::connec\+Tracks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tracks}{Tracks}} $\ast$}]{parent\+Track }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconnec_tracks_a60e22b9ac3c3e5772e8eb6d1ad86ffc0}\label{classconnec_tracks_a60e22b9ac3c3e5772e8eb6d1ad86ffc0}} 
+\index{connecTracks@{connecTracks}!````~connecTracks@{$\sim$connecTracks}}
+\index{````~connecTracks@{$\sim$connecTracks}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{$\sim$connecTracks()}{~connecTracks()}}
+{\footnotesize\ttfamily connec\+Tracks\+::$\sim$connec\+Tracks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classconnec_tracks_a6242fdea55333afe351a6312762c3180}\label{classconnec_tracks_a6242fdea55333afe351a6312762c3180}} 
+\index{connecTracks@{connecTracks}!connectTrains@{connectTrains}}
+\index{connectTrains@{connectTrains}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{connectTrains()}{connectTrains()}}
+{\footnotesize\ttfamily void connec\+Tracks\+::connect\+Trains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$}]{track,  }\item[{\mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}{train\+Connection\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+The connect\+Trains method called from the \mbox{\hyperlink{class_simulator}{Simulator}} class is used to form links netween various track segment. The method checks if the provided track is not null and assigns it to class variables accordinly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connec\+Tracks$\ast$} & track, train\+Connection\+Type type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Reutrn type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classconnec_tracks_a0926fe328690943fd93cddb75a132dd6}\label{classconnec_tracks_a0926fe328690943fd93cddb75a132dd6}} 
+\index{connecTracks@{connecTracks}!getNextlink@{getNextlink}}
+\index{getNextlink@{getNextlink}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{getNextlink()}{getNextlink()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$ connec\+Tracks\+::get\+Nextlink (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The get\+Nextlink method returns the next track (connec\+Track object) in the provided link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classconnec_tracks_a2adb47b9813db07ac2012d3b05a4832e}\label{classconnec_tracks_a2adb47b9813db07ac2012d3b05a4832e}} 
+\index{connecTracks@{connecTracks}!getParenttrack@{getParenttrack}}
+\index{getParenttrack@{getParenttrack}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{getParenttrack()}{getParenttrack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ connec\+Tracks\+::get\+Parenttrack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The get\+Parenttrack method returns the parent track or previous (Track object and is also associalted with its respective \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}}) object in the provided link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \mbox{\hyperlink{class_tracks}{Tracks}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classconnec_tracks_a93198f3e9a8c88f984630df373fb0b13}\label{classconnec_tracks_a93198f3e9a8c88f984630df373fb0b13}} 
+\index{connecTracks@{connecTracks}!getTrainconType@{getTrainconType}}
+\index{getTrainconType@{getTrainconType}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{getTrainconType()}{getTrainconType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}{connec\+Tracks\+::train\+Connection\+Type}} connec\+Tracks\+::get\+Traincon\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The get\+Traincon\+Type method is used to return a enum value indicatin which the track is DIRECT or JUNCTION or a TERMINATOR. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classconnec_tracks_a36cdeaf04e3c8c0fd76e95db8907bc19}\label{classconnec_tracks_a36cdeaf04e3c8c0fd76e95db8907bc19}} 
+\index{connecTracks@{connecTracks}!getTraindistanceTo@{getTraindistanceTo}}
+\index{getTraindistanceTo@{getTraindistanceTo}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{getTraindistanceTo()}{getTraindistanceTo()}}
+{\footnotesize\ttfamily int connec\+Tracks\+::get\+Traindistance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$}]{train }\end{DoxyParamCaption}) const}
+
+
+
+The get\+Traindistance\+To is used to compute the distance of the whole track route which is then used to determine the shortest path between the source and destination from \mbox{\hyperlink{class_route_planner}{Route\+Planner}} class. The const\+\_\+cast$<$connec\+Tracks$\ast$$>$(this) is utilized to remove the const for the current class object thus allowing for any modification if required. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & connec\+Tracks$\ast$ train \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns interger value of calculated distance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classconnec_tracks_a2bd9703c9fabb6b772f162237ae06342}\label{classconnec_tracks_a2bd9703c9fabb6b772f162237ae06342}} 
+\index{connecTracks@{connecTracks}!getTrainSignal@{getTrainSignal}}
+\index{getTrainSignal@{getTrainSignal}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{getTrainSignal()}{getTrainSignal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classts_system}{ts\+System}} $\ast$ connec\+Tracks\+::get\+Train\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The get\+Train\+Signal method returns a signal object as is. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \mbox{\hyperlink{classts_system}{ts\+System}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classconnec_tracks_ac6824010515f750c49aec7318ac5fd48}\label{classconnec_tracks_ac6824010515f750c49aec7318ac5fd48}} 
+\index{connecTracks@{connecTracks}!setTrainsignal@{setTrainsignal}}
+\index{setTrainsignal@{setTrainsignal}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{setTrainsignal()}{setTrainsignal()}}
+{\footnotesize\ttfamily void connec\+Tracks\+::set\+Trainsignal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classts_system}{ts\+System}} $\ast$}]{train\+Signal }\end{DoxyParamCaption})}
+
+
+
+The set\+Trainsignal method is used to set the singal object to the current classes signal object if the provided argument is not NULL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ts\+System$\ast$} & train\+Signal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Reutrn type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classconnec_tracks_a7ace6ad9b4b0704e7cad069155f82bec}\label{classconnec_tracks_a7ace6ad9b4b0704e7cad069155f82bec}} 
+\index{connecTracks@{connecTracks}!trainhasSignal@{trainhasSignal}}
+\index{trainhasSignal@{trainhasSignal}!connecTracks@{connecTracks}}
+\doxysubsubsection{\texorpdfstring{trainhasSignal()}{trainhasSignal()}}
+{\footnotesize\ttfamily bool connec\+Tracks\+::trainhas\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The trainhas\+Signal return boolean value if the associalted signal object of the class exists. Const added so nothing is changed making it only readable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns boolean value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/include/\mbox{\hyperlink{_connec_tracks_8h}{Connec\+Tracks.\+h}}\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/src/\mbox{\hyperlink{_connec_tracks_8cpp}{Connec\+Tracks.\+cpp}}\end{DoxyCompactItemize}

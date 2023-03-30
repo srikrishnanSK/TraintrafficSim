@@ -1,0 +1,48 @@
+\hypertarget{_simulator_8h_source}{}\doxysection{Simulator.\+h}
+\label{_simulator_8h_source}\index{Z:/ubuntu/TrainSignalsimulationSystem/include/Simulator.h@{Z:/ubuntu/TrainSignalsimulationSystem/include/Simulator.h}}
+\mbox{\hyperlink{_simulator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SIMULATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SIMULATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_trains_8h}{Trains.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tracks_8h}{Tracks.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connec_tracks_8h}{ConnecTracks.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_junction_8h}{Junction.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_signal_system_8h}{SignalSystem.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_route_planner_8h}{RoutePlanner.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_simulator}{Simulator}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \textcolor{comment}{//Vectors\ to\ hold\ track\ and\ train\ objects}}
+\DoxyCodeLine{00024\ \ \ \ std::vector<Tracks*>\ tracks;}
+\DoxyCodeLine{00025\ \ \ \ std::vector<Trains*>\ trains;}
+\DoxyCodeLine{00026\ \ \ \ \textcolor{comment}{//Logic\ to\ handle\ train\ movement}}
+\DoxyCodeLine{00027\ \ \ \ \textcolor{keywordtype}{void}\ moveTrain(\mbox{\hyperlink{class_trains}{Trains}}*\ train,\ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ nextPoint);}
+\DoxyCodeLine{00028\ \ \ \ \textcolor{keywordtype}{void}\ updateTrainsignals();}
+\DoxyCodeLine{00029\ \ \ \ std::mutex\ mtx;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \textcolor{comment}{//Constructor\ and\ Destructor}}
+\DoxyCodeLine{00033\ \ \ \ \mbox{\hyperlink{class_simulator_a031573bfcfe2e0f5c9539bcc1c7fc5d9}{Simulator}}();}
+\DoxyCodeLine{00034\ \ \ \ \mbox{\hyperlink{class_simulator_a0f49aa04f42060a785adf77346b9de9f}{\string~Simulator}}();}
+\DoxyCodeLine{00035\ \ \ \ \textcolor{comment}{//Methods\ to\ add\ Tracks,\ Trains,\ and\ Signals\ of\ the\ corresponding\ trains}}
+\DoxyCodeLine{00036\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulator_ae1eff95eb8ff4a7950e0bbdd7af90bdc}{addTracks}}(\mbox{\hyperlink{class_tracks}{Tracks}}*\ track);}
+\DoxyCodeLine{00037\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulator_aba9323fc29cb172fd7e3da64f17b31a6}{addTrain}}(\mbox{\hyperlink{class_trains}{Trains}}*\ train);}
+\DoxyCodeLine{00038\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulator_a1fe1b626eb3afe0b865508369f578d35}{addTrainconnection}}(\mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ from,\ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ to,\ \mbox{\hyperlink{classconnec_tracks_a8507a360dcc4ca0690ef067ee6ce624c}{connecTracks::trainConnectionType}}\ type);}
+\DoxyCodeLine{00039\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulator_a378cc8044a41e423da0c4083bb65568c}{addTrainsignal}}(\mbox{\hyperlink{classts_system}{tsSystem}}*\ trainSignal,\ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ location);}
+\DoxyCodeLine{00040\ \ \ \ \textcolor{comment}{//Runs\ simulation\ and\ print\ the\ respective\ states\ of\ the\ trains}}
+\DoxyCodeLine{00041\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulator_adfe488254b0356fa6e1bd3965519b73e}{runSimulation}}();}
+\DoxyCodeLine{00042\ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_simulator_a079d7d4f16b271de6b6ca1c8886552db}{stepThroughsimulation}}();}
+\DoxyCodeLine{00043\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulator_a1d28f6f7853a3cd0795dacbf3ea95147}{printStateoftrains}}();}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

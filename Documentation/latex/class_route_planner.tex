@@ -1,0 +1,80 @@
+\hypertarget{class_route_planner}{}\doxysection{Route\+Planner Class Reference}
+\label{class_route_planner}\index{RoutePlanner@{RoutePlanner}}
+
+
+{\ttfamily \#include $<$Route\+Planner.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_route_planner_a8170d84bfd811e947f1e5e513660a1b6}{Route\+Planner}} (const std\+::vector$<$ \mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ $>$ \&tracks, const std\+::vector$<$ \mbox{\hyperlink{class_trains}{Trains}} $\ast$ $>$ \&trains)
+\item 
+\mbox{\hyperlink{class_route_planner_a8048fb1234c39eaaf0c1da34543c9f72}{$\sim$\+Route\+Planner}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ $>$ \mbox{\hyperlink{class_route_planner_ad9df637fd5b9ac6c7764a03d3a7e11ed}{plan\+Routesfortrains}} (\mbox{\hyperlink{class_trains}{Trains}} $\ast$train)
+\begin{DoxyCompactList}\small\item\em The plan\+Routesfortrains method takes a train object as input which is validated before obtaining the current track information. The obtaining track information if not NULL is pushed as a connection back into the vector before proceeding to called the get\+Nexttrack method. This is performed until its laid out for all the trains. The returns next\+Track in line is also validated before added to the train route vector. The route planned all depends on the initial train position and track position they are placed on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_route_planner_ab70768479a3c4ecae6de242288c2a915}{print\+Trainroutes}} () const
+\begin{DoxyCompactList}\small\item\em The print\+Trainroutes is a simple method used to print the planned routes for each train onto the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_route_planner}{Route\+Planner}} class is another core class which aids in planning the routes of each provided train objects. Additionally it also helps choose the next segment in sequence accordingly 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_route_planner_a8170d84bfd811e947f1e5e513660a1b6}\label{class_route_planner_a8170d84bfd811e947f1e5e513660a1b6}} 
+\index{RoutePlanner@{RoutePlanner}!RoutePlanner@{RoutePlanner}}
+\index{RoutePlanner@{RoutePlanner}!RoutePlanner@{RoutePlanner}}
+\doxysubsubsection{\texorpdfstring{RoutePlanner()}{RoutePlanner()}}
+{\footnotesize\ttfamily Route\+Planner\+::\+Route\+Planner (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ $>$ \&}]{tracks,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_trains}{Trains}} $\ast$ $>$ \&}]{trains }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_route_planner_a8048fb1234c39eaaf0c1da34543c9f72}\label{class_route_planner_a8048fb1234c39eaaf0c1da34543c9f72}} 
+\index{RoutePlanner@{RoutePlanner}!````~RoutePlanner@{$\sim$RoutePlanner}}
+\index{````~RoutePlanner@{$\sim$RoutePlanner}!RoutePlanner@{RoutePlanner}}
+\doxysubsubsection{\texorpdfstring{$\sim$RoutePlanner()}{~RoutePlanner()}}
+{\footnotesize\ttfamily Route\+Planner\+::$\sim$\+Route\+Planner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_route_planner_ad9df637fd5b9ac6c7764a03d3a7e11ed}\label{class_route_planner_ad9df637fd5b9ac6c7764a03d3a7e11ed}} 
+\index{RoutePlanner@{RoutePlanner}!planRoutesfortrains@{planRoutesfortrains}}
+\index{planRoutesfortrains@{planRoutesfortrains}!RoutePlanner@{RoutePlanner}}
+\doxysubsubsection{\texorpdfstring{planRoutesfortrains()}{planRoutesfortrains()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ $>$ Route\+Planner\+::plan\+Routesfortrains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_trains}{Trains}} $\ast$}]{train }\end{DoxyParamCaption})}
+
+
+
+The plan\+Routesfortrains method takes a train object as input which is validated before obtaining the current track information. The obtaining track information if not NULL is pushed as a connection back into the vector before proceeding to called the get\+Nexttrack method. This is performed until its laid out for all the trains. The returns next\+Track in line is also validated before added to the train route vector. The route planned all depends on the initial train position and track position they are placed on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Trains$\ast$} & train. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns std\+::vector$<$\+Tracks$\ast$$>$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_route_planner_ab70768479a3c4ecae6de242288c2a915}\label{class_route_planner_ab70768479a3c4ecae6de242288c2a915}} 
+\index{RoutePlanner@{RoutePlanner}!printTrainroutes@{printTrainroutes}}
+\index{printTrainroutes@{printTrainroutes}!RoutePlanner@{RoutePlanner}}
+\doxysubsubsection{\texorpdfstring{printTrainroutes()}{printTrainroutes()}}
+{\footnotesize\ttfamily void Route\+Planner\+::print\+Trainroutes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The print\+Trainroutes is a simple method used to print the planned routes for each train onto the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Reutrn type is void. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/include/\mbox{\hyperlink{_route_planner_8h}{Route\+Planner.\+h}}\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/src/\mbox{\hyperlink{_route_planner_8cpp}{Route\+Planner.\+cpp}}\end{DoxyCompactItemize}

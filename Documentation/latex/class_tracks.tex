@@ -1,0 +1,120 @@
+\hypertarget{class_tracks}{}\doxysection{Tracks Class Reference}
+\label{class_tracks}\index{Tracks@{Tracks}}
+
+
+{\ttfamily \#include $<$Tracks.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tracks_adedb363f46fbf2c5814c12ff16918a31}{Tracks}} (int length, const std\+::string \&name)
+\item 
+\mbox{\hyperlink{class_tracks_a4cf9df8f36e4daee9e3d64a6a8892f43}{$\sim$\+Tracks}} ()
+\item 
+int \mbox{\hyperlink{class_tracks_a4863cf609651693ef2ce4c0a70b42cd4}{get\+Tracklength}} () const
+\begin{DoxyCompactList}\small\item\em The get\+Tracklength is used to return the set tracks length. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$ \mbox{\hyperlink{class_tracks_a18deb2616f9b0e0205069132360079d1}{get\+Trackstart\+Connection}} () const
+\begin{DoxyCompactList}\small\item\em The get\+Trackstart\+Connection method is used to return the starting point of a track accordingly. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$ \mbox{\hyperlink{class_tracks_af705a688ffcdbfaaa66faeb37fa74dbd}{get\+Trackend\+Connection}} () const
+\begin{DoxyCompactList}\small\item\em The get\+Trackend\+Connection method is used to return the end point of a track accordingly. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_tracks_a63865d9451dcc665c05af4172d34f52f}{get\+Trackname}} () const
+\begin{DoxyCompactList}\small\item\em The get\+Trackname method is used to return the associated tracks name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is responsible for handling all operations related to tracks to set their lengths, names, and get their start and end points 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tracks_adedb363f46fbf2c5814c12ff16918a31}\label{class_tracks_adedb363f46fbf2c5814c12ff16918a31}} 
+\index{Tracks@{Tracks}!Tracks@{Tracks}}
+\index{Tracks@{Tracks}!Tracks@{Tracks}}
+\doxysubsubsection{\texorpdfstring{Tracks()}{Tracks()}}
+{\footnotesize\ttfamily Tracks\+::\+Tracks (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_tracks_a4cf9df8f36e4daee9e3d64a6a8892f43}\label{class_tracks_a4cf9df8f36e4daee9e3d64a6a8892f43}} 
+\index{Tracks@{Tracks}!````~Tracks@{$\sim$Tracks}}
+\index{````~Tracks@{$\sim$Tracks}!Tracks@{Tracks}}
+\doxysubsubsection{\texorpdfstring{$\sim$Tracks()}{~Tracks()}}
+{\footnotesize\ttfamily Tracks\+::$\sim$\+Tracks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tracks_af705a688ffcdbfaaa66faeb37fa74dbd}\label{class_tracks_af705a688ffcdbfaaa66faeb37fa74dbd}} 
+\index{Tracks@{Tracks}!getTrackendConnection@{getTrackendConnection}}
+\index{getTrackendConnection@{getTrackendConnection}!Tracks@{Tracks}}
+\doxysubsubsection{\texorpdfstring{getTrackendConnection()}{getTrackendConnection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$ Tracks\+::get\+Trackend\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The get\+Trackend\+Connection method is used to return the end point of a track accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an object of connec\+Tracks$\ast$ type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tracks_a4863cf609651693ef2ce4c0a70b42cd4}\label{class_tracks_a4863cf609651693ef2ce4c0a70b42cd4}} 
+\index{Tracks@{Tracks}!getTracklength@{getTracklength}}
+\index{getTracklength@{getTracklength}!Tracks@{Tracks}}
+\doxysubsubsection{\texorpdfstring{getTracklength()}{getTracklength()}}
+{\footnotesize\ttfamily int Tracks\+::get\+Tracklength (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The get\+Tracklength is used to return the set tracks length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns length of integer type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tracks_a63865d9451dcc665c05af4172d34f52f}\label{class_tracks_a63865d9451dcc665c05af4172d34f52f}} 
+\index{Tracks@{Tracks}!getTrackname@{getTrackname}}
+\index{getTrackname@{getTrackname}!Tracks@{Tracks}}
+\doxysubsubsection{\texorpdfstring{getTrackname()}{getTrackname()}}
+{\footnotesize\ttfamily const std\+::string \& Tracks\+::get\+Trackname (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The get\+Trackname method is used to return the associated tracks name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns name of type string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tracks_a18deb2616f9b0e0205069132360079d1}\label{class_tracks_a18deb2616f9b0e0205069132360079d1}} 
+\index{Tracks@{Tracks}!getTrackstartConnection@{getTrackstartConnection}}
+\index{getTrackstartConnection@{getTrackstartConnection}!Tracks@{Tracks}}
+\doxysubsubsection{\texorpdfstring{getTrackstartConnection()}{getTrackstartConnection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classconnec_tracks}{connec\+Tracks}} $\ast$ Tracks\+::get\+Trackstart\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The get\+Trackstart\+Connection method is used to return the starting point of a track accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an object of connec\+Tracks$\ast$ type. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/include/\mbox{\hyperlink{_tracks_8h}{Tracks.\+h}}\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/src/\mbox{\hyperlink{_tracks_8cpp}{Tracks.\+cpp}}\end{DoxyCompactItemize}

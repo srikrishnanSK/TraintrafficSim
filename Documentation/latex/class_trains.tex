@@ -1,0 +1,306 @@
+\hypertarget{class_trains}{}\doxysection{Trains Class Reference}
+\label{class_trains}\index{Trains@{Trains}}
+
+
+{\ttfamily \#include $<$Trains.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}} \{ \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79aa51a09816d0e6d39f9e77388fde6460a}{FORWARD}}
+, \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79a94e102f01720cd95035b81fb0feb9f0b}{REVERSE}}
+ \}
+\item 
+enum \mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1c}{Status}} \{ \mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1cafa8ec681393c759872c26f82247078ab}{MOVING}}
+, \mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1ca470752c0de8f677910fdd094b55632de}{STOPPED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_trains_a2a5ef4df4919e767188be439ab8d17ec}{Trains}} (\mbox{\hyperlink{class_tracks}{Tracks}} $\ast$init\+Track, \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}} train\+Direction=\mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79aa51a09816d0e6d39f9e77388fde6460a}{FORWARD}})
+\item 
+\mbox{\hyperlink{class_trains_a628a1712ae35d34d0945835c7a1355ae}{$\sim$\+Trains}} ()
+\item 
+void \mbox{\hyperlink{class_trains_a36d72c85dfb04b3777c5d8bee94b5847}{stop}} ()
+\begin{DoxyCompactList}\small\item\em The stop method is utilized to update the status of the respective train associated with it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_trains_a91fcdf97f6f562a60fb3e7bf42c98614}{update\+Currenttrack}} (\mbox{\hyperlink{class_tracks}{Tracks}} $\ast$track)
+\begin{DoxyCompactList}\small\item\em The update\+Currenttrack method accepts a track object as Input , which on passing the validation is assigned to the class variable accordingly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_trains_a26f70c38f6dc90b484fc40597734108f}{advance\+Route\+Index}} ()
+\begin{DoxyCompactList}\small\item\em The advance\+Route\+Index method is used to increment the current\+Route\+Index variablle accordingly based on the total routes available which is calculated in the \mbox{\hyperlink{class_route_planner}{Route\+Planner}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_trains_ab4ceeba036d7fdaf4eb93c7b8fc7f570}{settrain\+Direction}} (\mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}} new\+Direction)
+\begin{DoxyCompactList}\small\item\em The settrain\+Direction method is used to set the associated \mbox{\hyperlink{class_trains}{Trains}} direction accoringly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_trains_a806ac1e609b50f17d58b376ae5b1f44a}{settrack\+Route}} (const std\+::vector$<$ \mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ $>$ \&route)
+\begin{DoxyCompactList}\small\item\em The settrack\+Route method is used to set the associated trackroute for the tied up train object. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_trains_a432472389495cea286297acde738b556}{get\+Current\+Route\+Index}} () const
+\begin{DoxyCompactList}\small\item\em The get\+Current\+Route\+Index method is used to return the associated index with respect to the tracks. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_trains_a3f092a16ef09705c88f2b8c598fef784}{hastrainreached\+Destination}} () const
+\begin{DoxyCompactList}\small\item\em The hastrainreached\+Destination method returns ture if the train has stopped or if the index is greater indicating it has no more tracks to move forward. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ \mbox{\hyperlink{class_trains_aeb0ff0171d8bd23645c4e48f652e9f0f}{get\+Currenttrack}} () const
+\begin{DoxyCompactList}\small\item\em The get\+Currenttrack method is used to return the current track object associated with the train accordingly. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}} \mbox{\hyperlink{class_trains_a42cbc731fdab2f9bce9c4c3adb33a158}{gettrain\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em The gettrain\+Direction method is used to return the associated trains direction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1c}{Status}} \mbox{\hyperlink{class_trains_aa467fb69e6e0725dd1f2103fdb2e55f2}{gettrain\+Status}} () const
+\begin{DoxyCompactList}\small\item\em The gettrain\+Status method is used to return the associated trains status. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ $>$ \& \mbox{\hyperlink{class_trains_a37bef0144428eb3c29abc8ced32f9a57}{gettrack\+Route}} () const
+\begin{DoxyCompactList}\small\item\em The gettrack\+Route method is used to return the associated track\+Route laid out for the train object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Train class is responsible for updating index and tracksegments for the train to move approproately. Additionally, it is also utilized for setting the trains direction, routes, and also obtain other related status information to update movement accordingly in the \mbox{\hyperlink{class_simulator}{Simulator}} class. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_trains_a110b3880bfe614b7fea6c0db168a3e79}\label{class_trains_a110b3880bfe614b7fea6c0db168a3e79}} 
+\index{Trains@{Trains}!Direction@{Direction}}
+\index{Direction@{Direction}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Trains\+::\+Direction}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORWARD@{FORWARD}!Trains@{Trains}}\index{Trains@{Trains}!FORWARD@{FORWARD}}}\mbox{\Hypertarget{class_trains_a110b3880bfe614b7fea6c0db168a3e79aa51a09816d0e6d39f9e77388fde6460a}\label{class_trains_a110b3880bfe614b7fea6c0db168a3e79aa51a09816d0e6d39f9e77388fde6460a}} 
+FORWARD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REVERSE@{REVERSE}!Trains@{Trains}}\index{Trains@{Trains}!REVERSE@{REVERSE}}}\mbox{\Hypertarget{class_trains_a110b3880bfe614b7fea6c0db168a3e79a94e102f01720cd95035b81fb0feb9f0b}\label{class_trains_a110b3880bfe614b7fea6c0db168a3e79a94e102f01720cd95035b81fb0feb9f0b}} 
+REVERSE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_trains_a969669e0236b8efa421ac7b3518e5a1c}\label{class_trains_a969669e0236b8efa421ac7b3518e5a1c}} 
+\index{Trains@{Trains}!Status@{Status}}
+\index{Status@{Status}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1c}{Trains\+::\+Status}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVING@{MOVING}!Trains@{Trains}}\index{Trains@{Trains}!MOVING@{MOVING}}}\mbox{\Hypertarget{class_trains_a969669e0236b8efa421ac7b3518e5a1cafa8ec681393c759872c26f82247078ab}\label{class_trains_a969669e0236b8efa421ac7b3518e5a1cafa8ec681393c759872c26f82247078ab}} 
+MOVING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOPPED@{STOPPED}!Trains@{Trains}}\index{Trains@{Trains}!STOPPED@{STOPPED}}}\mbox{\Hypertarget{class_trains_a969669e0236b8efa421ac7b3518e5a1ca470752c0de8f677910fdd094b55632de}\label{class_trains_a969669e0236b8efa421ac7b3518e5a1ca470752c0de8f677910fdd094b55632de}} 
+STOPPED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_trains_a2a5ef4df4919e767188be439ab8d17ec}\label{class_trains_a2a5ef4df4919e767188be439ab8d17ec}} 
+\index{Trains@{Trains}!Trains@{Trains}}
+\index{Trains@{Trains}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{Trains()}{Trains()}}
+{\footnotesize\ttfamily Trains\+::\+Trains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tracks}{Tracks}} $\ast$}]{init\+Track,  }\item[{\mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}}}]{train\+Direction = {\ttfamily \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79aa51a09816d0e6d39f9e77388fde6460a}{FORWARD}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_trains_a628a1712ae35d34d0945835c7a1355ae}\label{class_trains_a628a1712ae35d34d0945835c7a1355ae}} 
+\index{Trains@{Trains}!````~Trains@{$\sim$Trains}}
+\index{````~Trains@{$\sim$Trains}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{$\sim$Trains()}{~Trains()}}
+{\footnotesize\ttfamily Trains\+::$\sim$\+Trains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_trains_a26f70c38f6dc90b484fc40597734108f}\label{class_trains_a26f70c38f6dc90b484fc40597734108f}} 
+\index{Trains@{Trains}!advanceRouteIndex@{advanceRouteIndex}}
+\index{advanceRouteIndex@{advanceRouteIndex}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{advanceRouteIndex()}{advanceRouteIndex()}}
+{\footnotesize\ttfamily void Trains\+::advance\+Route\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The advance\+Route\+Index method is used to increment the current\+Route\+Index variablle accordingly based on the total routes available which is calculated in the \mbox{\hyperlink{class_route_planner}{Route\+Planner}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. return type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_trains_a432472389495cea286297acde738b556}\label{class_trains_a432472389495cea286297acde738b556}} 
+\index{Trains@{Trains}!getCurrentRouteIndex@{getCurrentRouteIndex}}
+\index{getCurrentRouteIndex@{getCurrentRouteIndex}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{getCurrentRouteIndex()}{getCurrentRouteIndex()}}
+{\footnotesize\ttfamily unsigned int Trains\+::get\+Current\+Route\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The get\+Current\+Route\+Index method is used to return the associated index with respect to the tracks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns index of unsigned integer type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_trains_aeb0ff0171d8bd23645c4e48f652e9f0f}\label{class_trains_aeb0ff0171d8bd23645c4e48f652e9f0f}} 
+\index{Trains@{Trains}!getCurrenttrack@{getCurrenttrack}}
+\index{getCurrenttrack@{getCurrenttrack}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{getCurrenttrack()}{getCurrenttrack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ Trains\+::get\+Currenttrack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The get\+Currenttrack method is used to return the current track object associated with the train accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns currenttrack object of type trains$\ast$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_trains_a37bef0144428eb3c29abc8ced32f9a57}\label{class_trains_a37bef0144428eb3c29abc8ced32f9a57}} 
+\index{Trains@{Trains}!gettrackRoute@{gettrackRoute}}
+\index{gettrackRoute@{gettrackRoute}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{gettrackRoute()}{gettrackRoute()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ $>$ \& Trains\+::gettrack\+Route (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The gettrack\+Route method is used to return the associated track\+Route laid out for the train object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns vector of object Tracks$\ast$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_trains_a42cbc731fdab2f9bce9c4c3adb33a158}\label{class_trains_a42cbc731fdab2f9bce9c4c3adb33a158}} 
+\index{Trains@{Trains}!gettrainDirection@{gettrainDirection}}
+\index{gettrainDirection@{gettrainDirection}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{gettrainDirection()}{gettrainDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Trains\+::\+Direction}} Trains\+::gettrain\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The gettrain\+Direction method is used to return the associated trains direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns train\+Direction of appropriate enum value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_trains_aa467fb69e6e0725dd1f2103fdb2e55f2}\label{class_trains_aa467fb69e6e0725dd1f2103fdb2e55f2}} 
+\index{Trains@{Trains}!gettrainStatus@{gettrainStatus}}
+\index{gettrainStatus@{gettrainStatus}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{gettrainStatus()}{gettrainStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1c}{Trains\+::\+Status}} Trains\+::gettrain\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The gettrain\+Status method is used to return the associated trains status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns train\+Status of approtiate Status enum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_trains_a3f092a16ef09705c88f2b8c598fef784}\label{class_trains_a3f092a16ef09705c88f2b8c598fef784}} 
+\index{Trains@{Trains}!hastrainreachedDestination@{hastrainreachedDestination}}
+\index{hastrainreachedDestination@{hastrainreachedDestination}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{hastrainreachedDestination()}{hastrainreachedDestination()}}
+{\footnotesize\ttfamily bool Trains\+::hastrainreached\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The hastrainreached\+Destination method returns ture if the train has stopped or if the index is greater indicating it has no more tracks to move forward. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns bool. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_trains_a806ac1e609b50f17d58b376ae5b1f44a}\label{class_trains_a806ac1e609b50f17d58b376ae5b1f44a}} 
+\index{Trains@{Trains}!settrackRoute@{settrackRoute}}
+\index{settrackRoute@{settrackRoute}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{settrackRoute()}{settrackRoute()}}
+{\footnotesize\ttfamily void Trains\+::settrack\+Route (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_tracks}{Tracks}} $\ast$ $>$ \&}]{track\+Route }\end{DoxyParamCaption})}
+
+
+
+The settrack\+Route method is used to set the associated trackroute for the tied up train object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & std\+::vector$<$\+Tracks$\ast$$>$\& track\+Route \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Return type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_trains_ab4ceeba036d7fdaf4eb93c7b8fc7f570}\label{class_trains_ab4ceeba036d7fdaf4eb93c7b8fc7f570}} 
+\index{Trains@{Trains}!settrainDirection@{settrainDirection}}
+\index{settrainDirection@{settrainDirection}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{settrainDirection()}{settrainDirection()}}
+{\footnotesize\ttfamily void Trains\+::settrain\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}}}]{direction }\end{DoxyParamCaption})}
+
+
+
+The settrain\+Direction method is used to set the associated \mbox{\hyperlink{class_trains}{Trains}} direction accoringly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Direction} & direction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. Return type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_trains_a36d72c85dfb04b3777c5d8bee94b5847}\label{class_trains_a36d72c85dfb04b3777c5d8bee94b5847}} 
+\index{Trains@{Trains}!stop@{stop}}
+\index{stop@{stop}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Trains\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The stop method is utilized to update the status of the respective train associated with it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. return type is void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_trains_a91fcdf97f6f562a60fb3e7bf42c98614}\label{class_trains_a91fcdf97f6f562a60fb3e7bf42c98614}} 
+\index{Trains@{Trains}!updateCurrenttrack@{updateCurrenttrack}}
+\index{updateCurrenttrack@{updateCurrenttrack}!Trains@{Trains}}
+\doxysubsubsection{\texorpdfstring{updateCurrenttrack()}{updateCurrenttrack()}}
+{\footnotesize\ttfamily void Trains\+::update\+Currenttrack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tracks}{Tracks}} $\ast$}]{track }\end{DoxyParamCaption})}
+
+
+
+The update\+Currenttrack method accepts a track object as Input , which on passing the validation is assigned to the class variable accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Tracks$\ast$} & track \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing. return type is void. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/include/\mbox{\hyperlink{_trains_8h}{Trains.\+h}}\item 
+Z\+:/ubuntu/\+Train\+Signalsimulation\+System/src/\mbox{\hyperlink{_trains_8cpp}{Trains.\+cpp}}\end{DoxyCompactItemize}

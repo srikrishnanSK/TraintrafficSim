@@ -1,0 +1,36 @@
+\hypertarget{_signal_system_8h_source}{}\doxysection{Signal\+System.\+h}
+\label{_signal_system_8h_source}\index{Z:/ubuntu/TrainSignalsimulationSystem/include/SignalSystem.h@{Z:/ubuntu/TrainSignalsimulationSystem/include/SignalSystem.h}}
+\mbox{\hyperlink{_signal_system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SIGNALSYSTEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SIGNALSYSTEM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connec_tracks_8h}{ConnecTracks.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classconnec_tracks}{connecTracks}};\textcolor{comment}{//\ Forward\ Decleration\ }}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classts_system}{tsSystem}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{trainSignalstate}}\ \{\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2a33903928d3101c29fda7509fa637e160}{GREEN}}\ =\ 0,\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2ae0525ff2b79967c5086b9de9af1ee640}{RED}}\ }
+\DoxyCodeLine{00016\ \ \ \ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \textcolor{comment}{//Constrcutor\ and\ Destructor\ }}
+\DoxyCodeLine{00019\ \ \ \ \mbox{\hyperlink{classts_system}{tsSystem}}(\mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ connecTrain,\ \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{trainSignalstate}}\ initState);}
+\DoxyCodeLine{00020\ \ \ \ \mbox{\hyperlink{classts_system_a076a0b749020479f0082eff458067d5e}{\string~tsSystem}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \textcolor{comment}{//Setter\ and\ getter\ methods}}
+\DoxyCodeLine{00023\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classts_system_a24faee0ae25d0222f5dd6234bc4c42d9}{setTrainstate}}(\mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{trainSignalstate}}\ state);}
+\DoxyCodeLine{00024\ \ \ \ \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{trainSignalstate}}\ \mbox{\hyperlink{classts_system_aa5b4ac3359071a09911c15d05a96a472}{getTrainstate}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \mbox{\hyperlink{classts_system_adbc28f5bd1302a4e806a2493ba67c1b2}{trainSignalstate}}\ currentTrainstate;}
+\DoxyCodeLine{00028\ \ \ \ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ connecTrack;}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

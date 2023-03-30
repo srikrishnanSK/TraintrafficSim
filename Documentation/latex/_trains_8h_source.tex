@@ -1,0 +1,51 @@
+\hypertarget{_trains_8h_source}{}\doxysection{Trains.\+h}
+\label{_trains_8h_source}\index{Z:/ubuntu/TrainSignalsimulationSystem/include/Trains.h@{Z:/ubuntu/TrainSignalsimulationSystem/include/Trains.h}}
+\mbox{\hyperlink{_trains_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TRAINS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TRAINS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tracks_8h}{Tracks.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tracks}{Tracks}};\textcolor{comment}{//Forward\ Decleration}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_trains}{Trains}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79aa51a09816d0e6d39f9e77388fde6460a}{FORWARD}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79a94e102f01720cd95035b81fb0feb9f0b}{REVERSE}}}
+\DoxyCodeLine{00019\ \ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1c}{Status}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1cafa8ec681393c759872c26f82247078ab}{MOVING}},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1ca470752c0de8f677910fdd094b55632de}{STOPPED}}}
+\DoxyCodeLine{00024\ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \textcolor{comment}{//Constructor\ and\ Destructor}}
+\DoxyCodeLine{00027\ \ \ \ \mbox{\hyperlink{class_trains}{Trains}}(\mbox{\hyperlink{class_tracks}{Tracks}}*\ initTrack,\ \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}}\ trainDirection\ =\ \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79aa51a09816d0e6d39f9e77388fde6460a}{FORWARD}});}
+\DoxyCodeLine{00028\ \ \ \ \mbox{\hyperlink{class_trains_a628a1712ae35d34d0945835c7a1355ae}{\string~Trains}}();}
+\DoxyCodeLine{00029\ \ \ \ \textcolor{comment}{//All\ essential\ operations\ related\ to\ the\ Trains}}
+\DoxyCodeLine{00030\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_trains_a36d72c85dfb04b3777c5d8bee94b5847}{stop}}();}
+\DoxyCodeLine{00031\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_trains_a91fcdf97f6f562a60fb3e7bf42c98614}{updateCurrenttrack}}(\mbox{\hyperlink{class_tracks}{Tracks}}*\ track);}
+\DoxyCodeLine{00032\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_trains_a26f70c38f6dc90b484fc40597734108f}{advanceRouteIndex}}();}
+\DoxyCodeLine{00033\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_trains_ab4ceeba036d7fdaf4eb93c7b8fc7f570}{settrainDirection}}(\mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}}\ newDirection);}
+\DoxyCodeLine{00034\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_trains_a806ac1e609b50f17d58b376ae5b1f44a}{settrackRoute}}(\textcolor{keyword}{const}\ std::vector<Tracks*>\&\ route);}
+\DoxyCodeLine{00035\ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_trains_a432472389495cea286297acde738b556}{getCurrentRouteIndex}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_trains_a3f092a16ef09705c88f2b8c598fef784}{hastrainreachedDestination}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \ \ \ \mbox{\hyperlink{class_tracks}{Tracks}}*\ \mbox{\hyperlink{class_trains_aeb0ff0171d8bd23645c4e48f652e9f0f}{getCurrenttrack}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}}\ \mbox{\hyperlink{class_trains_a42cbc731fdab2f9bce9c4c3adb33a158}{gettrainDirection}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1c}{Status}}\ \mbox{\hyperlink{class_trains_aa467fb69e6e0725dd1f2103fdb2e55f2}{gettrainStatus}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \textcolor{keyword}{const}\ std::vector<Tracks*>\&\ \mbox{\hyperlink{class_trains_a37bef0144428eb3c29abc8ced32f9a57}{gettrackRoute}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \mbox{\hyperlink{class_tracks}{Tracks}}*\ currentTrack;}
+\DoxyCodeLine{00045\ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ currentRouteIndex;}
+\DoxyCodeLine{00046\ \ \ \ \mbox{\hyperlink{class_trains_a110b3880bfe614b7fea6c0db168a3e79}{Direction}}\ trainDirection;}
+\DoxyCodeLine{00047\ \ \ \ \mbox{\hyperlink{class_trains_a969669e0236b8efa421ac7b3518e5a1c}{Status}}\ trainStatus;}
+\DoxyCodeLine{00048\ \ \ \ std::vector<Tracks*>\ trackRoute;}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

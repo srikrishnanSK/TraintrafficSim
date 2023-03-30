@@ -1,0 +1,33 @@
+\hypertarget{_tracks_8h_source}{}\doxysection{Tracks.\+h}
+\label{_tracks_8h_source}\index{Z:/ubuntu/TrainSignalsimulationSystem/include/Tracks.h@{Z:/ubuntu/TrainSignalsimulationSystem/include/Tracks.h}}
+\mbox{\hyperlink{_tracks_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TRACKS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TRACKS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connec_tracks_8h}{ConnecTracks.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classconnec_tracks}{connecTracks}};\textcolor{comment}{//Forward\ Decleration\ }}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tracks}{Tracks}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \textcolor{comment}{//Constructor\ and\ Destructor}}
+\DoxyCodeLine{00014\ \ \ \ \mbox{\hyperlink{class_tracks}{Tracks}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00015\ \ \ \ \mbox{\hyperlink{class_tracks_a4cf9df8f36e4daee9e3d64a6a8892f43}{\string~Tracks}}();}
+\DoxyCodeLine{00016\ \ \ \ \textcolor{comment}{//Operations\ for\ handling\ tracks}}
+\DoxyCodeLine{00017\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_tracks_a4863cf609651693ef2ce4c0a70b42cd4}{getTracklength}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00018\ \ \ \ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ \mbox{\hyperlink{class_tracks_a18deb2616f9b0e0205069132360079d1}{getTrackstartConnection}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ \mbox{\hyperlink{class_tracks_af705a688ffcdbfaaa66faeb37fa74dbd}{getTrackendConnection}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_tracks_a63865d9451dcc665c05af4172d34f52f}{getTrackname}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \textcolor{keywordtype}{int}\ length;}
+\DoxyCodeLine{00024\ \ \ \ std::string\ name;}
+\DoxyCodeLine{00025\ \ \ \ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ trackStartconnection;}
+\DoxyCodeLine{00026\ \ \ \ \mbox{\hyperlink{classconnec_tracks}{connecTracks}}*\ trackEndconnection;}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
